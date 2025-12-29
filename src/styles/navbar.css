@@ -1,0 +1,83 @@
+/* =========================
+   NAVBAR — PURE TRANSPARENT
+========================= */
+
+.navbar {
+  position: fixed;       /* floats above page */
+  top: 1.5rem;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+
+  display: flex;
+  justify-content: center;
+}
+
+/* NAV CONTAINER */
+.navbar .site-nav {
+  display: flex;
+  gap: 1.5rem;
+  /* remove ALL background, borders, shadows */
+  background: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border: none !important;
+  box-shadow: none !important;
+
+  padding: 0;
+  margin: 0;
+}
+
+/* LINKS ONLY */
+.navbar .nav-link {
+  font-family: Arial, sans-serif;
+  font-size: .10rem;
+  font-weight: 500;
+  font-style: italic;
+  line-height: 1;
+
+  color: rgba(255, 255, 255, 0.9); /* visible against page */
+  text-decoration: none;
+
+  padding: 6px 4px;
+  white-space: nowrap;
+
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar{
+  font-family: 'Caveat', cursive;
+}
+/* HOVER */
+.navbar .nav-link:hover {
+  color: #facc15;
+  transform: translateY(-1px);
+}
+
+/* ACTIVE */
+.navbar .nav-link.active {
+  color: #facc15;
+}
+.donate-btn {
+  background: transparent;
+  border: 1px solid #facc15;
+  border-radius: 20px;
+  padding: 6px 14px;
+  cursor: pointer;
+}
+
+.donate-btn:hover {
+  background: #facc15;
+  color: #000;
+}
+.gallery-nav {
+  position: fixed;
+  top: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+}
+.navbar ul {
+  display: flex;
+  gap: 0.5rem;   /* 🔥 increase / decrease this */
+}

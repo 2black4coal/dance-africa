@@ -1,0 +1,122 @@
+/* BUTTON */
+.donate-btn {
+  background: transparent;
+  border: 1px solid #facc15;
+  color: #facc15;
+  font-style: italic;
+  padding: 6px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+.donate-btn:hover {
+  background: #facc15;
+  color: #000;
+}
+
+/* BACKDROP */
+.donation-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* MODAL */
+.donation-modal {
+  background: #0d0d0d;
+  border-radius: 16px;
+  padding: 2.5rem;
+  width: 90%;
+  max-width: 420px;
+  border: 1px solid #222;
+  text-align: center;
+}
+
+/* TEXT */
+.donation-modal h2 {
+  font-size: 1.9rem;
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.donation-text {
+  font-size: 1rem;
+  color: #ccc;
+  margin-bottom: 1.5rem;
+}
+
+/* AMOUNTS */
+.donation-amounts {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.donation-amounts button {
+  flex: 1;
+  margin: 0 4px;
+  background: #111;
+  border: 1px solid #333;
+  color: #fff;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.donation-amounts button:hover {
+  border-color: #facc15;
+}
+
+/* METHODS */
+.donation-methods button {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #333;
+  background: #111;
+  color: white;
+  cursor: pointer;
+}
+
+.donation-methods .primary {
+  background: #facc15;
+  color: black;
+  border: none;
+}
+
+.close-btn {
+  margin-top: 10px;
+  background: transparent;
+  color: #aaa;
+  border: none;
+  cursor: pointer;
+}
+
+
+
+
+
+
+/* Additional Styles */
+.donate-btn {
+  background: transparent;
+  border: 1px solid #facc15;
+  color: #facc15;
+  padding: 8px 16px;
+  font-size: 0.95rem;
+  font-style: italic;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.donate-btn:hover {
+  background: #facc15;
+  color: #000;
+}

@@ -1,0 +1,182 @@
+/* PAGE LAYOUT */
+.support-page {
+  min-height: 100vh;
+  background: #050505;
+  color: #e5e5e5;
+  padding: 5rem 1.5rem;
+  font-family: 'carnet', cursive;
+}
+
+.support-container {
+  max-width: 900px;
+  margin: 0 auto;
+  background: rgba(34, 36, 36, 0.45);
+  border: 1px solid #1f1f1f;
+  border-radius: 20px;
+  padding: 3rem 2rem;
+}
+
+/* HEADER ROW — UPDATED */
+.project-light-header {
+  display: flex;
+  align-items: center; /* flame aligned center */
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+  overflow: visible;       /* 🔥 REQUIRED */
+  flex-wrap: nowrap;
+}
+
+.project-light-header .page-title { margin: 0; }
+
+/* SUPPORT PAGE PARAGRAPH SIZE */
+.support-page .page-subtitle {
+  font-size: 1.16rem !important;
+  line-height: 1.65;
+  margin-bottom: 1rem;
+}
+
+/* PROJECT LIGHT SECTION */
+.project-light {
+  margin-top: 2.5rem;
+  padding: 1.75rem;
+  border-left: 3px solid #facc15;
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.project-light h2 {
+  font-size: clamp(1.2rem, 3.5vw, 1.6rem);
+  color: #facc15;
+  margin: 0;
+  transition: transform 0.3s ease-in-out;
+}
+
+.project-light h2:hover {
+  transform: scale(1.05);
+}
+
+/* DONATION SECTION */
+.donation-section {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.donation-section h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.donation-options {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* BUTTONS */
+.donate-btn {
+  background: transparent;
+  border: 2px solid #facc15;
+  color: #facc15;
+  padding: 0.45rem 1.1rem;
+  border-radius: 999px;
+  font-size: clamp(0.75rem, 2vw, 0.85rem);
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
+}
+
+.donate-btn:hover {
+  background: #facc15;
+  color: #050505;
+  box-shadow:
+    0 0 12px rgba(250, 204, 21, 0.6),
+    0 0 25px rgba(250, 204, 21, 0.4);
+}
+
+/* REAL OLYMPIC FLAME — UPDATED */
+
+
+
+/* REALISTIC SVG OLYMPIC FLAME */
+.candle-flame {
+  position: relative;
+  width: 32px;
+  height: 84px;
+  display: block;
+  overflow: visible;
+  transform-origin: 50% 85%;
+  will-change: transform, opacity;
+  filter: drop-shadow(0 14px 38px rgba(255,175,48,0.78));
+  margin-left: 0.25rem;
+}
+
+/* steady, brighter radial glow behind the flame */
+.candle-flame::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 48%;
+  width: 110px;
+  height: 110px;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(255,235,160,0.88) 0%, rgba(255,185,75,0.56) 36%, rgba(255,120,30,0.24) 65%, rgba(255,60,0,0) 85%);
+  border-radius: 50%;
+  filter: blur(12px);
+  z-index: -1;
+  pointer-events: none;
+  opacity: 1;
+  animation: glowRadiate 3.2s ease-in-out infinite;
+}
+
+.candle-flame path {
+  vector-effect: non-scaling-stroke;
+}
+
+.candle-flame .flame-core {
+  mix-blend-mode: screen;
+  transform-origin: 50% 85%;
+  /* subtle CSS fallback flicker */
+  animation: coreFlicker 1.6s ease-in-out infinite;
+}
+
+@keyframes coreFlicker {
+  0% { transform: scale(1); opacity: 1; }
+  40% { transform: scale(1.04); opacity: 0.94; }
+  80% { transform: scale(0.99); opacity: 0.98; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes outerFlicker {
+  0% { transform: translateY(0) scale(1); }
+  40% { transform: translateY(-2px) scale(1.02); }
+  80% { transform: translateY(0) scale(0.99); }
+  100% { transform: translateY(0) scale(1); }
+}
+
+.candle-flame path:first-child {
+  animation: outerFlicker 1.6s ease-in-out infinite;
+}
+
+@keyframes glowRadiate {
+  0% { transform: scale(1); opacity: 0.94; }
+  50% { transform: scale(1.06); opacity: 1; }
+  100% { transform: scale(1); opacity: 0.94; }
+}
+
+
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .support-container {
+    padding: 2rem 1.2rem;
+  }
+
+  .donation-options {
+    gap: 0.75rem;
+  }
+
+  .project-light-header {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: center;
+  }
+}

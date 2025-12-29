@@ -1,0 +1,183 @@
+.advertise-page {
+  min-height: 100vh;
+  padding: 4rem 2rem;
+  background: #0a0a0a;
+  font-family: 'Cormorant Garamond', serif;
+  color: #fff;
+}
+
+.ad-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.ad-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid #333;
+  border-radius: 16px;
+  padding: 2rem;
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.ad-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+  border-color: #facc15;
+}
+
+.ad-card h2 {
+  font-size: 1.6rem;
+  color: #facc15;
+  margin-bottom: 1rem;
+  font-family: 'Viner Hand ITC', cursive;
+}
+
+.ad-card p,
+.ad-card li {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #ccc;
+  font-family: cursive;
+  font-style: italic;
+}
+
+.ad-card ul {
+  padding-left: 1.2rem;
+  list-style: none;
+}
+
+.ad-card ul li::before {
+  content: "•";
+  color: #facc15;
+  margin-right: 0.5rem;
+}
+
+.highlight-card {
+  background: #1a1a1a;
+  border: 1px solid #facc15;
+  text-align: center;
+}
+
+.cta-button {
+  display: inline-block;
+  margin-top: 1.2rem;
+  padding: 0.75rem 1.5rem;
+  background: #facc15;
+  color: #000;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.cta-button:hover {
+  background: #ffe580;
+}
+
+/* BRAND CAROUSEL */
+.brand-carousel {
+  margin: 4rem auto;
+  text-align: center;
+}
+
+.brand-carousel h2 {
+  font-size: 1.5rem;
+  color: #facc15;
+  margin-bottom: 1.5rem;
+}
+
+.carousel-track {
+  display: flex;
+  overflow-x: auto;
+  gap: 2rem;
+  padding: 1rem 0;
+  scroll-snap-type: x mandatory;
+}
+
+.logo-slide {
+  flex: 0 0 auto;
+  scroll-snap-align: center;
+  width: 120px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #111;
+  border-radius: 8px;
+  padding: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.logo-slide img {
+  max-width: 100%;
+  max-height: 100%;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
+}
+
+.logo-slide:hover img {
+  filter: grayscale(0%);
+}
+
+/* INQUIRY FORM */
+.inquiry-form {
+  max-width: 600px;
+  margin: 4rem auto;
+  text-align: center;
+}
+
+.inquiry-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.inquiry-form input,
+.inquiry-form textarea {
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: 1px solid #444;
+  background: #111;
+  color: #fff;
+  font-family: inherit;
+}
+
+.inquiry-form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+.brand-carousel {
+  padding: 3rem 0;
+  overflow: hidden;
+  text-align: center;
+}
+
+.brand-carousel h2 {
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 3rem;
+  animation: scroll 25s linear infinite;
+}
+
+.logo-slide img {
+  height: 60px;
+  object-fit: contain;
+  opacity: 0.85;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
