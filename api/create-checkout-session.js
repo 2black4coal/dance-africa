@@ -10,6 +10,10 @@ export default async function handler(req, res) {
   try {
     const { amount } = req.body;
 
+    if (!amount || amount <= 0) {
+      return res.status(400).json({ error: "Invalid amount" });
+    }
+
     const session = await stripe.checkout.sessions.create({
       mode: "payment",
       payment_method_types: ["card"],
@@ -20,7 +24,7 @@ export default async function handler(req, res) {
             product_data: {
               name: "Support Dance Africa",
             },
-            unit_amount: amount,
+            unit_amount: amount * 100, // ✅ REQUIRED
           },
           quantity: 1,
         },
@@ -29,9 +33,9 @@ export default async function handler(req, res) {
       cancel_url: `${req.headers.origin}/donation-cancel`,
     });
 
-    res.status(200).json({ url: session.url });
-  } catch (error) {
-    console.error("Stripe error:", error);
-    res.status(500).json({ error: "Stripe session failed" });
+    return res.status(200).json({ url: session.url });
+  } catch (err) {
+    console.error("Stripe error:", err);
+    return res.status(500).json({ error: "Stripe session failed" });
   }
 }
