@@ -1,8 +1,10 @@
+
+
+export const runtime = "nodejs18.x";
+
 import Stripe from "stripe";
 
-export const config = {
-  runtime: "nodejs",
-};
+
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
