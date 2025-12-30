@@ -5,7 +5,7 @@
 ========================= */
 .page-title {
   font-family: 'Handwriting', 'Dancing Script', 'Allura', cursive !important;
-  font-size: 1.55rem !important;
+  font-size: 1.35rem !important;
   font-weight: 200 !important;
   letter-spacing: 0.08em;
   font-style: italic;
@@ -24,7 +24,7 @@
 
 .page-subtitle {
   font-family: 'Handwriting', cursive;
-  font-size: 2.8rem;
+  font-size: 2rem;
   font-weight: 300;
   text-align: center;
   transition: color 0.3s ease, transform 0.3s ease;
