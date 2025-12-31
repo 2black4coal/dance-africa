@@ -1,106 +1,140 @@
+/* =========================
+   DANCE STYLES PAGE
+========================= */
 .danceStyles-page {
   min-height: 100vh;
   background: #050505;
   color: #fff;
-  padding: clamp(1.6rem, 4vw, 3rem);
+  padding: 3rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* =========================
-   GRID — RESPONSIVE
+   GRID LAYOUT
 ========================= */
 .dance-grid {
   display: grid;
-
-  /* 📱 Phones → 1 card per row */
-  grid-template-columns: 1fr;
-
-  gap: clamp(1.4rem, 3vw, 2.4rem);
-  max-width: 1280px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
 /* =========================
-   TABLETS → 2 cards per row
-   (optional — remove if you want 1 → 3 jump)
-========================= */
-@media (min-width: 720px) {
-  .dance-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-/* =========================
-   DESKTOP → 3 cards per row
-========================= */
-@media (min-width: 1100px) {
-  .dance-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-/* =========================
-   CARD
+   CARD STYLES
 ========================= */
 .dance-style-card {
-  background: rgba(34, 36, 36, 0.42);
+  background: rgba(34, 36, 36, 0.4);
   border: 1px solid #222;
-  border-radius: 18px;
+  border-radius: 16px;
   overflow: hidden;
-
-  transition:
-    transform 0.35s ease,
-    box-shadow 0.35s ease,
-    border-color 0.35s ease;
-
+  transition: transform 0.35s ease-in-out, box-shadow 0.35s ease-in-out;
   will-change: transform;
 }
 
 .dance-style-card:hover {
-  transform: scale(1.03);
-  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.45);
+  transform: scale(1.035);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
   border-color: #facc15;
 }
 
 /* =========================
-   IMAGE
+   IMAGE CONTAINER
 ========================= */
-.dance-style-card .image-container {
+.image-container {
   background: rgba(255, 255, 255, 0.05);
-  padding: clamp(0.8rem, 2vw, 1.25rem);
+  padding: 1.25rem;
   padding-bottom: 0;
 }
 
-.dance-style-card .image-container img {
+.image-container img {
   width: 100%;
-  height: clamp(180px, 26vw, 240px);
+  height: 220px;
   object-fit: cover;
-  border-radius: 14px;
+  border-radius: 12px;
   display: block;
+  transition: transform 0.3s ease;
+}
+
+.dance-style-card:hover .image-container img {
+  transform: scale(1.03);
 }
 
 /* =========================
-   CONTENT
+   CARD CONTENT
 ========================= */
 .card-body {
-  padding: clamp(1rem, 2.4vw, 1.4rem);
+  padding: 1.25rem;
 }
 
 .card-body h2 {
-  font-size: clamp(1.1rem, 2.6vw, 1.35rem);
-  font-family: "Tempus Sans ITC", cursive;
-  margin-bottom: 0.4rem;
+  font-size: clamp(1.1rem, 2.2vw, 1.3rem);
+  font-family: 'Tempus Sans ITC', cursive;
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
 }
 
 .card-body .origin {
-  font-size: clamp(0.8rem, 2vw, 0.9rem);
-  color: #aaa;
-  margin-bottom: 0.7rem;
+  font-size: clamp(0.8rem, 1.6vw, 0.85rem);
+  color: #999;
+  margin-bottom: 0.75rem;
   display: block;
 }
 
 .card-body p {
-  font-size: clamp(0.9rem, 2.2vw, 1rem);
-  line-height: 1.55;
+  font-size: clamp(0.85rem, 1.8vw, 0.95rem);
   color: #ddd;
-  font-family: cursive;
+  line-height: 1.5;
+}
+
+/* =========================
+   RESPONSIVE MEDIA QUERIES
+========================= */
+@media (max-width: 900px) {
+  .dance-grid {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.8rem;
+  }
+
+  .image-container img {
+    height: 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .dance-grid {
+    grid-template-columns: 1fr; /* ONE card per row on phones & small tablets */
+    gap: 1.5rem;
+  }
+
+  .image-container img {
+    height: 180px;
+  }
+
+  .card-body h2 {
+    font-size: clamp(1rem, 5vw, 1.2rem);
+  }
+
+  .card-body p {
+    font-size: clamp(0.8rem, 4vw, 0.9rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .dance-grid {
+    grid-template-columns: 1fr; /* strict 1 card per row for small phones */
+    gap: 1rem;
+  }
+
+  .image-container img {
+    height: 160px;
+  }
+
+  .card-body h2 {
+    font-size: 1.05rem;
+  }
+
+  .card-body p {
+    font-size: 0.85rem;
+  }
 }
