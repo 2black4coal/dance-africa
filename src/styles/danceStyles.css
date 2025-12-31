@@ -14,7 +14,7 @@
 ========================= */
 .dance-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(3, 1fr); /* default 3 cards per row */
   gap: 2rem;
   max-width: 1200px;
   margin: 0 auto;
@@ -90,9 +90,9 @@
 /* =========================
    RESPONSIVE MEDIA QUERIES
 ========================= */
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
   .dance-grid {
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-template-columns: repeat(2, 1fr); /* 2 cards per row on tablets */
     gap: 1.8rem;
   }
 
@@ -103,7 +103,7 @@
 
 @media (max-width: 768px) {
   .dance-grid {
-    grid-template-columns: 1fr; /* ONE card per row on phones & small tablets */
+    grid-template-columns: 1fr; /* 1 card per row on phones */
     gap: 1.5rem;
   }
 
@@ -122,7 +122,7 @@
 
 @media (max-width: 480px) {
   .dance-grid {
-    grid-template-columns: 1fr; /* strict 1 card per row for small phones */
+    grid-template-columns: 1fr; /* strictly 1 card per row for small phones */
     gap: 1rem;
   }
 
