@@ -1,85 +1,76 @@
-/* PAGE 
-}
- */
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@300;400;700&display=swap');
 
-
-
+/* PAGE WRAPPER */
 .home-page {
   min-height: 100vh;
   width: 100%;
   background: url("/images/home/homeland.png") center 65% / cover no-repeat;
   color: #facc15;
-  font-style: italic;
+  font-family: 'Dancing Script', 'Allura', cursive;
   display: flex;
   flex-direction: column;
-  position: relative;
-   font-family: 'Dancing Script', 'Allura', cursive;
-    
+  justify-content: center;
+  padding: 2rem 1rem;
 }
 
-
-
-
+/* CENTER CONTENT */
+.home-center {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
 
 .home-content {
+  text-align: center;
   max-width: 800px;
   margin: 0 auto;
-  padding: 0 1rem;
 }
 
 /* AFRICA MAP */
 .home-map {
   display: block;
-  margin: 0 auto;
-  max-width: 60vw;
-  max-height: 40vh;
+  margin: 0 auto 1.5rem;
+  max-width: clamp(250px, 55vw, 600px);
+  max-height: clamp(180px, 40vh, 380px);
   object-fit: contain;
-  transform-origin: center center;
-  will-change: transform, opacity;
+  transition: transform 0.6s ease;
 }
 
-/* TITLE */
-.home-content p {
-  margin-top: 1.5rem;
-  font-size: 2.5rem;
-  font-weight: 800;
-  color: #fff;
-
-  /* ✨ Subtle glow for readability */
-  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.55);
-  will-change: transform, opacity;
-  backface-visibility: hidden;
+/* TITLE — fully responsive */
+.home-title {
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-weight: 700;
+  color: #00000091;
+  margin-top: 1rem;
+  -webkit-text-stroke: 0.4px rgba(0, 0, 0, 0.45);
+  transition: transform 0.45s ease, text-shadow 0.45s ease;
 }
 
-/* SUBTEXT */
-.home-content p {
+.home-title:hover {
+  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.55);
+}
+
+/* SUBTITLE — fully responsive */
+.home-subtitle {
   margin-top: 0.75rem;
-  font-size: 1.2rem;
+  font-size: clamp(1rem, 2.5vw, 1.6rem);
   color: #fef9c3;
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
   line-height: 1.6;
-
-  /* ✨ Soft shadow for contrast */
   text-shadow: 0 2px 5px rgba(0, 0, 0, 0.45);
+  transition: transform 0.45s ease, text-shadow 0.45s ease;
 }
 
-/* RESPONSIVE */
+.home-subtitle:hover {
+  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.55);
+}
 
-
+/* RESPONSIVE MAP TWEAK */
 @media (max-width: 600px) {
   .home-map {
     max-width: 80vw;
     max-height: 30vh;
   }
-
-  .home-content h1 {
-    font-size: 2rem;
-   
-   
-  }
 }
- 
-
