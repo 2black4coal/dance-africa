@@ -9,7 +9,7 @@ export default function Home() {
 
           {/* Africa Map – smooth zoom-in */}
           <motion.img
-            src="/images/e.png"
+            src="/images/b.png"
             alt="Africa Map"
             className="home-map"
             initial={{ scale: 0.6, opacity: 0 }}
