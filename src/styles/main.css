@@ -1,11 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Allurat&display=swap');
 
 
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600&family=Cormorant+Garamond:wght@400;500&family=Cormorant+Script:wght@400;500&family=Parisienne&display=swap');
 
-/* =========================
-   GLOBAL RESET
-========================= */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&display=swap');
+
+
 * {
   box-sizing: border-box;
   max-width: 100%;
@@ -17,17 +16,30 @@ img {
 }
 
 /* =========================
-   PAGE TITLES (GLOBAL)
+   RESPONSIVE TYPE SCALE
+   (WORKS ON ALL DEVICES)
+========================= */
+:root {
+  --title-size: clamp(1.6rem, 4.5vw, 2.6rem);
+  --subtitle-size: clamp(1.05rem, 2.8vw, 1.6rem);
+  --title-spacing: clamp(0.04em, 0.6vw, 0.08em);
+  --subtitle-spacing: clamp(0.03em, 0.4vw, 0.06em);
+}
+
+/* =========================
+   PAGE TITLES — GLOBAL
 ========================= */
 .page-title {
   font-family: 'Dancing Script', cursive;
-  font-size:  1.6rem;
-  font-weight: 200;
-  letter-spacing: 0.08em;
+  font-size: var(--title-size);
+  font-weight: 500;
+  letter-spacing: var(--title-spacing);
   font-style: italic;
-  line-height: 2.15;
-  
+  line-height: 1.25;
   text-align: center;
+  margin-bottom: 0.6rem;
+
+  transition: color 0.4s ease, transform 0.4s ease;
 }
 
 .page-title:hover {
@@ -35,89 +47,24 @@ img {
   transform: scale(1.03);
 }
 
+/* =========================
+   PAGE SUBTITLES — GLOBAL
+========================= */
 .page-subtitle {
-  font-family: 'Allurat', cursive;
-  font-size:  1.1rem;
-  font-weight: 200;
-  letter-spacing: 0.08em;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: var(--subtitle-size);
+  font-weight: 400;
+  letter-spacing: var(--subtitle-spacing);
   font-style: italic;
-  line-height: 1.15;
-  margin: 0 auto 4.5rem;
+  line-height: 1.35;
   text-align: center;
-margin: 0 auto 4rem;
+  max-width: 52ch;
+  margin: 0 auto 3.5rem;
+
+  transition: color 0.4s ease, transform 0.4s ease;
 }
 
 .page-subtitle:hover {
   color: #facc15;
   transform: translateY(-2px);
 }
-
-/* =========================
-   AFRICA CARD TYPOGRAPHY
-========================= */
-.africa-card p,
-.africa-subcard p {
-  font-style: italic;
-  line-height: 1.5;
-  color: #968a8a;
-}
-
-.africa-card p {
-  font-size: 0.95rem;
-  font-family: 'Caveat', cursive;
-}
-
-.africa-subcard p {
-  font-size: 0.9rem;
-  font-family: cursive;
-}
-
-.africa-card h2 {
-  font-size: 1.2rem;
-  font-family: 'Dancing Script', cursive;
-  font-weight: 300;
-  color: #cccbc9;
-}
-
-.africa-subcard h3 {
-  font-size: 1.1rem;
-  font-family: 'Handwriting', cursive;
-  font-weight: 300;
-}
-
-
-.page-title {
-  font-family: 'Dancing Script', cursive;
-  font-size: clamp(1.4rem, 3vw, 2.4rem);
-  font-weight: 200;
-  letter-spacing: 0.08em;
-  font-style: italic;
-  line-height: 1.3;
-  text-align: center;
-  transition: color 0.55s ease, transform 0.55s ease, text-shadow 0.55s ease;
-}
-
-.page-title:hover {
-  color: #facc15;
-  transform: scale(1.04);
-  text-shadow: 0 3px 12px rgba(0, 0, 0, 0.45);
-}
-
-.page-subtitle {
-  font-family: 'Allurat', cursive;
-  font-size: clamp(1rem, 2.4vw, 1.6rem);
-  font-weight: 200;
-  letter-spacing: 0.08em;
-  font-style: italic;
-  line-height: 1.25;
-  text-align: center;
-  margin: 0 auto 4rem;
-  transition: color 0.55s ease, transform 0.55s ease, text-shadow 0.55s ease;
-}
-
-.page-subtitle:hover {
-  color: #facc15;
-  transform: translateY(-3px);
-  text-shadow: 0 3px 12px rgba(0, 0, 0, 0.45);
-}
-
