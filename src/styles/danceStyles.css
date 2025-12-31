@@ -1,22 +1,95 @@
+/* =========================
+   GOOGLE FONTS — IMPORT ONCE
+========================= */
+
+/* =========================
+   GLOBAL RESET
+========================= */
+* {
+  box-sizing: border-box;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: block;
+  height: auto;
+}
+
+/* =========================
+   RESPONSIVE TYPE SCALE
+========================= */
+:root {
+  --title-size: clamp(1.5rem, 4vw, 2.2rem);
+  --subtitle-size: clamp(0.9rem, 2.2vw, 1.3rem);
+  --title-spacing: clamp(0.04em, 0.6vw, 0.08em);
+  --subtitle-spacing: clamp(0.03em, 0.4vw, 0.06em);
+}
+
+/* =========================
+   PAGE TITLES — GLOBAL
+========================= */
+.page-title {
+  font-family: 'Dancing Script', cursive;
+  font-size: var(--title-size);
+  font-weight: 500;
+  letter-spacing: var(--title-spacing);
+  font-style: italic;
+  line-height: 1.25;
+  text-align: center;
+  margin-bottom: 0.6rem;
+  transition: color 0.4s ease, transform 0.4s ease;
+}
+
+.page-title:hover {
+  color: #facc15;
+  transform: scale(1.03);
+}
+
+.page-subtitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: var(--subtitle-size);
+  font-weight: 400;
+  letter-spacing: var(--subtitle-spacing);
+  font-style: italic;
+  line-height: 1.35;
+  text-align: center;
+  max-width: 52ch;
+  margin: 0 auto 2.5rem;
+  transition: color 0.4s ease, transform 0.4s ease;
+}
+
+.page-subtitle:hover {
+  color: #facc15;
+  transform: translateY(-2px);
+}
+
+/* =========================
+   DANCE STYLES PAGE
+========================= */
 .danceStyles-page {
   min-height: 100vh;
   background: #050505;
   color: #fff;
-  padding: 3rem;
- 
+  padding: 2.5rem 1rem;
 }
 
-
-/* GRID LAYOUT */
+/* =========================
+   GRID LAYOUT
+========================= */
 .dance-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
   max-width: 1200px;
   margin: 0 auto;
+  width: 100%;
 }
 
-/* CARD */
+/* =========================
+   CARD STYLES
+========================= */
 .dance-style-card {
   background: rgba(34, 36, 36, 0.4);
   border: 1px solid #222;
@@ -32,8 +105,7 @@
   border-color: #facc15;
 }
 
-
-/* IMAGE CONTAINER BACKGROUND */
+/* IMAGE CONTAINER */
 .image-container {
   background: rgba(255, 255, 255, 0.05);
   padding: 1.25rem;
@@ -48,15 +120,14 @@
   display: block;
 }
 
-/* CONTENT */
+/* CARD BODY */
 .card-body {
   padding: 1.25rem;
 }
 
 .card-body h2 {
-  font-size: 1.3rem;
-  font-style: 'Tempus Sans ITC' cursive;
-  
+  font-size: clamp(1.1rem, 2.2vw, 1.4rem);
+  font-family: 'Tempus Sans ITC', cursive;
   margin-bottom: 0.5rem;
 }
 
@@ -68,15 +139,54 @@
 }
 
 .card-body p {
-  font-size: 0.95rem;
-  color: #ddd; 
-  font-family:  cursive;
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  color: #ddd;
+  font-family: cursive;
   line-height: 1.5;
 }
 
-/* RESPONSIVE */
+/* =========================
+   RESPONSIVE BREAKPOINTS
+========================= */
+@media (max-width: 1024px) {
+  .dance-grid {
+    gap: 1.8rem;
+  }
+
+  .card-body h2 {
+    font-size: clamp(1rem, 2vw, 1.3rem);
+  }
+}
+
 @media (max-width: 768px) {
+  .dance-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
   .image-container img {
     height: 180px;
+  }
+
+  .card-body h2 {
+    font-size: 1.2rem;
+  }
+
+  .card-body p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .danceStyles-page {
+    padding: 1.5rem 1rem;
+  }
+
+  .card-body h2 {
+    font-size: 1.1rem;
+  }
+
+  .card-body p {
+    font-size: 0.85rem;
   }
 }

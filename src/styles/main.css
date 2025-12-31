@@ -20,10 +20,13 @@ img {
    (WORKS ON ALL DEVICES)
 ========================= */
 :root {
-  --title-size: clamp(1.6rem, 4.5vw, 2.6rem);
-  --subtitle-size: clamp(1.05rem, 2.8vw, 1.6rem);
-  --title-spacing: clamp(0.04em, 0.6vw, 0.08em);
-  --subtitle-spacing: clamp(0.03em, 0.4vw, 0.06em);
+  /* TITLES — ceremonial but controlled */
+  --title-size: clamp(1.45rem, 3.8vw, 2.25rem);
+  --title-spacing: clamp(0.04em, 0.55vw, 0.08em);
+
+  /* SUBTITLES — clearly secondary */
+  --subtitle-size: clamp(0.95rem, 2.1vw, 1.35rem);
+  --subtitle-spacing: clamp(0.025em, 0.35vw, 0.05em);
 }
 
 /* =========================
