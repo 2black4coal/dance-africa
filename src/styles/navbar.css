@@ -1,100 +1,124 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Script&family=Allura&family=Parisienne&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Script:wght@400;500&family=Parisienne&display=swap');
 
+/* =========================
+   NAVBAR CONTAINER
+========================= */
 .navbar {
   position: fixed;
-  top: 1.5rem;
+  top: 1.4rem;
   left: 0;
   right: 0;
   z-index: 1000;
-  gap: 1.2rem;
+
   display: flex;
   justify-content: center;
-  
-  letter-spacing: 0.12em;
-  opacity: 0.9;
+  pointer-events: auto;
 }
 
-
-
-
-
-
+/* =========================
+   NAV LINKS
+========================= */
 .navbar .nav-link {
-  font-family: 'Cormorant Script', 'Allura', 'Parisienne', cursive;
-  font-size: 1.05rem;
-  font-weight: 200;          /* extremely thin */
-  letter-spacing: 0.05em;    /* airy but controlled */
+  font-family: "Cormorant Script", "Parisienne", cursive;
+
+  /* ✅ RESPONSIVE STANDARD */
+  font-size: clamp(0.95rem, 1.4vw, 1.1rem);
+
+  font-weight: 400; /* readable, not hair-thin */
+  letter-spacing: 0.06em;
+
   color: rgba(255, 255, 255, 0.92);
   text-decoration: none;
-  padding: 6px 6px;
+
+  padding: 6px 10px;
+  margin: 0 2px;
+
+  /* ✅ gentle curve separation */
+  border-radius: 10px;
+
   white-space: nowrap;
-  transition: color 0.3s ease, transform 0.3s ease;
+
+  transition:
+    color 0.35s ease,
+    background 0.35s ease,
+    transform 0.35s ease;
 }
 
-
-
+/* =========================
+   HOVER / ACTIVE
+========================= */
 .navbar .nav-link:hover {
   color: #facc15;
+  background: rgba(255, 255, 255, 0.05);
   transform: translateY(-1px);
 }
 
+.navbar .nav-link.active {
+  color: #facc15;
+}
 
-/* DONATE BUTTON */
+/* =========================
+   DONATE BUTTON
+========================= */
 .donate-btn {
   text-decoration: none !important;
+  font-family: inherit;
+
+  font-size: clamp(0.7rem, 1vw, 0.85rem);
+  font-weight: 600;
+
   color: #facc15;
   border: 1px solid #facc15;
   border-radius: 14px;
-  padding: 4px 10px;
-  font-size: 0.75rem;
-  font-weight: 600;
+
+  padding: 4px 12px;
   background: transparent;
   cursor: pointer;
 
   animation: goldGlow 2.2s ease-in-out infinite;
-  transition: background 0.3s ease, color 0.3s ease;
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
 }
 
 .donate-btn:hover {
   background: #facc15;
   color: #000;
+  transform: translateY(-1px);
 }
-
-/* MOBILE FIX */
-@media (max-width: 768px) {
-  .navbar .site-nav {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.6rem;
-  }
-
- 
-  .donate-btn {
-    font-size: 0.70rem;
-    padding: 4px 10px;
-  }
-}
-
-/* GOLD GLOW ANIMATION */
-@keyframes goldGlow {
-  0% {
-    box-shadow: 0 0 6px rgba(250, 204, 21, 0.4),
-                0 0 12px rgba(250, 204, 21, 0.3);
-  }
-  50% {
-    box-shadow: 0 0 12px rgba(250, 204, 21, 0.7),
-                0 0 24px rgba(250, 204, 21, 0.5);
-  }
-  100% {
-    box-shadow: 0 0 6px rgba(250, 204, 21, 0.4),
-                0 0 12px rgba(250, 204, 21, 0.3);
-  }
-}
-
 
 /* =========================
-   END OF NAVBAR STYLES
-
+   MOBILE REFINEMENT
 ========================= */
+@media (max-width: 768px) {
+  .navbar {
+    top: 1rem;
+  }
 
+  .navbar .nav-link {
+    padding: 6px 8px;
+    letter-spacing: 0.05em;
+  }
+}
 
+/* =========================
+   GOLD GLOW
+========================= */
+@keyframes goldGlow {
+  0% {
+    box-shadow:
+      0 0 6px rgba(250, 204, 21, 0.35),
+      0 0 12px rgba(250, 204, 21, 0.25);
+  }
+  50% {
+    box-shadow:
+      0 0 12px rgba(250, 204, 21, 0.6),
+      0 0 24px rgba(250, 204, 21, 0.45);
+  }
+  100% {
+    box-shadow:
+      0 0 6px rgba(250, 204, 21, 0.35),
+      0 0 12px rgba(250, 204, 21, 0.25);
+  }
+}
