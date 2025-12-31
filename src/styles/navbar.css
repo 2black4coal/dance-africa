@@ -5,7 +5,7 @@
 ========================= */
 .navbar {
   position: fixed;
-  top: 1.4rem;
+  top: clamp(0.9rem, 2.5vw, 1.5rem);
   left: 0;
   right: 0;
   z-index: 1000;
@@ -16,70 +16,86 @@
 }
 
 /* =========================
-   FLEX CONTAINER (NO BLOCK)
+   NAV CONTAINER
 ========================= */
 .site-nav {
   display: flex;
   align-items: center;
-  gap: clamp(0.6rem, 1.8vw, 1.4rem);
 
-  /* ❌ removed background block */
-  /* ❌ removed blur */
-  /* ❌ removed padding bubble */
-  /* ❌ removed border radius */
+  gap: clamp(0.6rem, 2vw, 1.5rem);
 
-  padding: 0; /* clean, floating */
+  padding: 0;
+  margin: 0;
+
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 /* =========================
-   NAV LINKS
+   NAV LINKS (DESKTOP DEFAULT)
 ========================= */
 .nav-link {
   font-family: "Cormorant Script", "Parisienne", cursive;
-  font-size: clamp(1.15rem, 2.4vw, 1.35rem);
+
+  /* responsive, safe clamp */
+  font-size: clamp(1.15rem, 2.6vw, 1.45rem);
+
   font-weight: 400;
   letter-spacing: 0.06em;
-  color: rgba(255, 255, 255, 0.92);
+
+  color: rgba(255, 255, 255, 0.94);
   text-decoration: none;
+
   padding: 6px 10px;
   border-radius: 10px;
+
   white-space: nowrap;
+
   transition:
     color 0.35s ease,
     background 0.35s ease,
-    transform 0.35s ease;
+    transform 0.35s ease,
+    text-shadow 0.35s ease;
 }
 
-
-.nav-link:hover {
+/* hover / focus */
+.nav-link:hover,
+.nav-link:focus-visible {
   color: #facc15;
-  background: rgba(255, 255, 255, 0.05); /* subtle hover only */
+  background: rgba(255, 255, 255, 0.05);
   transform: translateY(-1px);
 }
 
+/* active page */
 .nav-link.active {
   color: #facc15;
+  text-shadow: 0 0 6px rgba(250, 204, 21, 0.35);
 }
 
 /* =========================
    DONATE BUTTON
 ========================= */
 .donate-btn {
-  font-size: clamp(1rem, 2.2vw, 1.25rem);
+  font-family: inherit;
+  font-size: clamp(0.95rem, 2.2vw, 1.2rem);
   font-weight: 600;
+
   color: #facc15;
   border: 1px solid #facc15;
   border-radius: 14px;
+
   padding: 4px 12px;
   background: transparent;
+
   cursor: pointer;
+
   animation: goldGlow 2.2s ease-in-out infinite;
+
   transition:
     background 0.3s ease,
     color 0.3s ease,
     transform 0.3s ease;
 }
-
 
 .donate-btn:hover {
   background: #facc15;
@@ -88,11 +104,12 @@
 }
 
 /* =========================
-   MOBILE REFINEMENT
+   MOBILE & TABLET FIX (CRITICAL)
 ========================= */
 @media (max-width: 768px) {
+
   .navbar {
-    top: 1rem;
+    top: 0.85rem;
   }
 
   .site-nav {
@@ -100,13 +117,33 @@
   }
 
   .nav-link {
-    padding: 5px 8px;
-    letter-spacing: 0.05em;
+    /* 🔑 fixes thin cursive on phones */
+    font-weight: 500;
+    letter-spacing: 0.035em;
+    font-size: 1.25rem;
+
+    /* subtle stroke support */
+    text-shadow: 0 0 0.6px rgba(255, 255, 255, 0.45);
+  }
+
+  .donate-btn {
+    font-size: 1rem;
+    padding: 4px 10px;
   }
 }
 
 /* =========================
-   GOLD GLOW
+   VERY SMALL DEVICES
+========================= */
+@media (max-width: 420px) {
+  .nav-link {
+    font-size: 1.2rem;
+    letter-spacing: 0.03em;
+  }
+}
+
+/* =========================
+   GOLD GLOW ANIMATION
 ========================= */
 @keyframes goldGlow {
   0% {
@@ -125,3 +162,7 @@
       0 0 12px rgba(250, 204, 21, 0.25);
   }
 }
+
+/* =========================
+   END — NAVBAR (FINAL)
+========================= */
