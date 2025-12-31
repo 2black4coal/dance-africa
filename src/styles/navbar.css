@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Script:wght@400;500&family=Parisienne&display=swap');
 
 /* =========================
-   NAVBAR CONTAINER
+   NAVBAR WRAPPER
 ========================= */
 .navbar {
   position: fixed;
@@ -16,26 +16,33 @@
 }
 
 /* =========================
+   FLEX CONTAINER (MISSING BEFORE)
+========================= */
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(0.6rem, 1.8vw, 1.4rem);
+
+  background: rgba(0, 0, 0, 0.35);
+  padding: 0.55rem 1.2rem;
+  border-radius: 14px;
+  backdrop-filter: blur(6px);
+}
+
+/* =========================
    NAV LINKS
 ========================= */
-.navbar .nav-link {
+.nav-link {
   font-family: "Cormorant Script", "Parisienne", cursive;
-
-  /* ✅ RESPONSIVE STANDARD */
   font-size: clamp(0.95rem, 1.4vw, 1.1rem);
-
-  font-weight: 400; /* readable, not hair-thin */
+  font-weight: 400;
   letter-spacing: 0.06em;
 
   color: rgba(255, 255, 255, 0.92);
   text-decoration: none;
 
   padding: 6px 10px;
-  margin: 0 2px;
-
-  /* ✅ gentle curve separation */
   border-radius: 10px;
-
   white-space: nowrap;
 
   transition:
@@ -44,16 +51,13 @@
     transform 0.35s ease;
 }
 
-/* =========================
-   HOVER / ACTIVE
-========================= */
-.navbar .nav-link:hover {
+.nav-link:hover {
   color: #facc15;
   background: rgba(255, 255, 255, 0.05);
   transform: translateY(-1px);
 }
 
-.navbar .nav-link.active {
+.nav-link.active {
   color: #facc15;
 }
 
@@ -64,7 +68,7 @@
   text-decoration: none !important;
   font-family: inherit;
 
-  font-size: clamp(0.7rem, 1vw, 0.85rem);
+  font-size: clamp(0.75rem, 1.2vw, 0.9rem);
   font-weight: 600;
 
   color: #facc15;
@@ -96,8 +100,13 @@
     top: 1rem;
   }
 
-  .navbar .nav-link {
-    padding: 6px 8px;
+  .site-nav {
+    gap: 0.6rem;
+    padding: 0.45rem 0.8rem;
+  }
+
+  .nav-link {
+    padding: 5px 8px;
     letter-spacing: 0.05em;
   }
 }
