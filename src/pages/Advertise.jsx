@@ -1,6 +1,6 @@
 
 import { motion } from "framer-motion";
-import Navbar from "../components/Navbar";
+
 import BrandCarousel from "../components/BrandCarousel";
 import "../styles/main.css";
 import "../styles/advertise.css";
@@ -19,7 +19,7 @@ const containerVariants = {
 export default function Advertise() {
   return (
     <section className="advertise-page">
-      <Navbar />
+     
 
       <h1 className="page-title">Partner With the Pulse of Africa</h1>
       <p className="page-subtitle">

@@ -1,20 +1,33 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant:wght@300&family=Allura&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Allurat&display=swap');
+
+
 
 /* =========================
-   PAGE TITLES
+   GLOBAL RESET
+========================= */
+* {
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+img {
+  display: block;
+  height: auto;
+}
+
+/* =========================
+   PAGE TITLES (GLOBAL)
 ========================= */
 .page-title {
-  font-family: 'Handwriting', 'Dancing Script', 'Allura', cursive !important;
-  font-size: 1.35rem !important;
-  font-weight: 200 !important;
+  font-family: 'Dancing Script', cursive;
+  font-size:  1.6rem;
+  font-weight: 200;
   letter-spacing: 0.08em;
   font-style: italic;
-  line-height: 1.1;
-  color: rgba(255, 255, 255, 0.55);
+  line-height: 2.15;
+  
   text-align: center;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
-  opacity: 0.9;
-  transition: opacity 0.6s ease, transform 0.6s ease, color 0.6s ease;
 }
 
 .page-title:hover {
@@ -23,11 +36,15 @@
 }
 
 .page-subtitle {
-  font-family: 'Handwriting', cursive;
-  font-size: 2rem;
-  font-weight: 300;
+  font-family: 'Allurat', cursive;
+  font-size:  1.1rem;
+  font-weight: 200;
+  letter-spacing: 0.08em;
+  font-style: italic;
+  line-height: 1.15;
+  margin: 0 auto 4.5rem;
   text-align: center;
-  transition: color 0.3s ease, transform 0.3s ease;
+margin: 0 auto 4rem;
 }
 
 .page-subtitle:hover {
@@ -36,23 +53,22 @@
 }
 
 /* =========================
-   AFRICA CARDS
+   AFRICA CARD TYPOGRAPHY
 ========================= */
 .africa-card p,
 .africa-subcard p {
   font-style: italic;
-  line-height: 20px;
+  line-height: 1.5;
   color: #968a8a;
-  transition: color 0.3s ease;
 }
 
 .africa-card p {
-  font-size: 0.94rem;
+  font-size: 0.95rem;
   font-family: 'Caveat', cursive;
 }
 
 .africa-subcard p {
-  font-size: 0.88rem;
+  font-size: 0.9rem;
   font-family: cursive;
 }
 
@@ -64,178 +80,10 @@
 }
 
 .africa-subcard h3 {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-family: 'Handwriting', cursive;
   font-weight: 300;
 }
 
-/* =========================
-   GLOBAL NAVBAR
-========================= */
-.navbar {
-  font-family: 'Cormorant', serif;
-  font-weight: 100;
-  letter-spacing: 0.12em;
-  opacity: 0.85;
-}
 
-.navbar .nav-link {
-  font-family: 'Allura', cursive;
-  font-size: 13px;
-  font-weight: 100;
-  letter-spacing: 0.04em;
-  opacity: 0.75;
-  transform: scaleX(0.96);
-  text-shadow: 0 0.5px 1px rgba(0,0,0,0.25);
-}
 
-/* =========================
-   MUSIC CONTROLS (TRANSPARENT)
-========================= */
-.music-control {
-  position: fixed;
-  left: 1rem;
-  bottom: 1rem;
-  z-index: 60;
-  background: transparent;
-  padding: 0.45rem 0.6rem;
-  border-radius: 12px;
-  display: flex;
-  flex-direction: column;
-  gap: 0.3rem;
-  color: #fff;
-  border: none;
-}
-
-.music-row {
-  display: flex;
-  align-items: center;
-  gap: 0.45rem;
-}
-
-/* Transparent engraved icons */
-.music-btn {
-  background: transparent;
-  border: none;
-  color: rgba(255,255,255,0.75);
-  font-size: 0.95rem;
-  cursor: pointer;
-  padding: 0.2rem;
-  font-family: 'Cormorant', serif;
-  letter-spacing: 0.08em;
-}
-
-.music-btn:hover {
-  color: #facc15;
-  transform: scale(1.06);
-}
-
-/* TRACK SELECT – faint, transparent */
-.track-select {
-  background: transparent;
-  color: rgba(255,255,255,0.85);
-  border: 1px solid rgba(255,255,255,0.1);
-  padding: 0.2rem 0.4rem;
-  border-radius: 6px;
-  font-size: 0.75rem;
-}
-
-/* =========================
-   VOLUME SLIDER – INVISIBLE / ENGRAVED
-========================= */
-.volume-slider {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 110px;
-  height: 2px;
-  background: transparent;
-  cursor: pointer;
-}
-
-/* Track (very faint line) */
-.volume-slider::-webkit-slider-runnable-track {
-  height: 2px;
-  background: rgba(255,255,255,0.22);
-  border-radius: 20px;
-}
-
-.volume-slider::-moz-range-track {
-  height: 2px;
-  background: rgba(255,255,255,0.22);
-  border-radius: 20px;
-}
-
-/* Thumb – transparent center, faint border only */
-.volume-slider::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  height: 10px;
-  width: 10px;
-  border-radius: 50%;
-  background: transparent;
-  border: 1px solid rgba(255,255,255,0.5);
-  margin-top: -4px;
-  transition: transform 0.2s ease, border-color 0.3s ease;
-}
-
-.volume-slider::-moz-range-thumb {
-  height: 10px;
-  width: 10px;
-  border-radius: 50%;
-  background: transparent;
-  border: 1px solid rgba(255,255,255,0.5);
-  transition: transform 0.2s ease, border-color 0.3s ease;
-}
-
-.volume-slider::-webkit-slider-thumb:hover,
-.volume-slider::-moz-range-thumb:hover {
-  transform: scale(1.12);
-  border-color: #facc15;
-}
-
-/* =========================
-   NOW PLAYING + PULSE
-========================= */
-.now-playing {
-  font-size: 0.75rem;
-  color: #facc15;
-  opacity: 0.9;
-  margin-bottom: 0.2rem;
-  text-shadow: 0 0 6px rgba(0,0,0,0.4);
-  transition: opacity 0.3s ease;
-}
-
-.pulse {
-  animation: pulseGold 1.8s infinite ease-in-out;
-}
-
-@keyframes pulseGold {
-  0% { opacity: 0.7; }
-  50% { opacity: 1; }
-  100% { opacity: 0.7; }
-}
-
-/* =========================
-   WAVEFORM VISUALIZER
-========================= */
-.waveform-canvas {
-  display: block;
-  width: 180px;
-  height: 40px;
-  margin-bottom: 0.25rem;
-  opacity: 0.9;
-}
-
-/* =========================
-   COLLAPSED MODE
-========================= */
-.music-control.collapsed {
-  padding: 0.25rem 0.35rem;
-}
-
-.music-control.collapsed .now-playing,
-.music-control.collapsed .waveform-canvas,
-.music-control.collapsed .track-select,
-.music-control.collapsed .volume-slider,
-.music-control.collapsed button:not(.collapse-btn) {
-  display: none;
-}

@@ -2,24 +2,10 @@
   min-height: 100vh;
   background: #050505;
   color: #fff;
-  padding: 4rem 1.5rem;
+  padding: 3rem;
  
 }
 
-.page-title {
-  text-align: center;
-  font-size: 2rem;
-  font-style: italic;
-  margin-bottom: 0.5rem;
-}
-
-.page-subtitle {
-  text-align: center;
-  color: #aaa;
-  max-width: 700px;
-  margin: 0 auto 3rem;
-  font-size: 1rem;
-}
 
 /* GRID LAYOUT */
 .dance-grid {

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Navbar from "../components/Navbar";
+
 
 export default function Donate() {
   const [amount, setAmount] = useState(10);
@@ -17,7 +17,7 @@ export default function Donate() {
 
   return (
     <>
-      <Navbar />
+   
       <section className="donate-page">
         <h1>Support Dance Africa</h1>
 

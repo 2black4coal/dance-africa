@@ -1,15 +1,16 @@
 import { motion } from "framer-motion";
-import Navbar from "../components/Navbar";
+
+
 import DonateButton from "../components/DonateButton";
 import AdBanner from "../components/AdBanner";
 import "../styles/main.css";
 import "../styles/support.css";
+import "../styles/donate.css";
 
 export default function Support() {
   return (
     <>
-      <Navbar />
-
+     
       <section className="support-page">
         <motion.div
           className="support-container"

@@ -103,20 +103,25 @@
 
 
 
-/* Additional Styles */
 .donate-btn {
-  background: transparent;
-  border: 1px solid #facc15;
+  text-decoration: none;              /* remove underline */
   color: #facc15;
-  padding: 8px 16px;
-  font-size: 0.95rem;
-  font-style: italic;
+  border: 1px solid #facc15;
+  border-radius: 16px;                /* slightly smaller curve */
+  padding: 4px 10px;                  /* smaller size */
+  font-size: 0.75rem;                 /* smaller text */
+  font-weight: 600;
+  background: transparent;
   cursor: pointer;
-  border-radius: 6px;
-  transition: all 0.3s ease;
+
+  /* ceremonial gold glow */
+  animation: goldGlow 2.2s ease-in-out infinite;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 .donate-btn:hover {
   background: #facc15;
   color: #000;
+  text-decoration: none;              /* ensure no underline on hover */
 }
+

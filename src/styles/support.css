@@ -3,7 +3,7 @@
   min-height: 100vh;
   background: #050505;
   color: #e5e5e5;
-  padding: 5rem 1.5rem;
+  padding: 3rem;
   font-family: 'carnet', cursive;
 }
 
@@ -26,14 +26,7 @@
   flex-wrap: nowrap;
 }
 
-.project-light-header .page-title { margin: 0; }
 
-/* SUPPORT PAGE PARAGRAPH SIZE */
-.support-page .page-subtitle {
-  font-size: 1.16rem !important;
-  line-height: 1.65;
-  margin-bottom: 1rem;
-}
 
 /* PROJECT LIGHT SECTION */
 .project-light {

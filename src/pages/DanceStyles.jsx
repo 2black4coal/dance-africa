@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import Navbar from "../components/Navbar";
+
 import React from "react";
 import AdBanner from "../components/AdBanner";
 import "../styles/main.css";
@@ -276,7 +276,7 @@ const danceStyles = [
 export default function DanceStyles() {
   return (
     <section className="danceStyles-page">
-      <Navbar />
+
 
       <h1 className="page-title">Explore African Dance Styles</h1>
       <p className="page-subtitle">

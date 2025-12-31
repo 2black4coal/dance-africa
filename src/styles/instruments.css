@@ -1,32 +1,15 @@
-@font-face {
-  font-family: 'Handwriting';
-  font-style: normal;
-  font-weight: 500;
-  src: local('Handwriting'), url('https://fonts.cdnfonts.com/s/16716/Handwriting.woff') format('woff');
-}
 
-/* PAGE */
 .instruments-page {
   min-height: 100vh;
   background: #050505;
   color: #fff;
-  padding: 4rem 1.5rem;
-  font-size: 0.9rem;
+  padding: 3rem;
+  font-size: 0.95rem;
 }
 
-.page-title {
-  text-align: center;
-  margin-bottom: 0.5rem;
-}
 
-.page-subtitle {
-  text-align: center;
-  color: #aaa;
-  max-width: 700px;
-  margin: 0 auto 4rem;
-}
 
-/* ROW SYSTEM */
+
 .rows {
   max-width: 1200px;
   margin: 0 auto;
@@ -34,114 +17,128 @@
 
 .row {
   display: flex;
+  align-items: stretch;
   gap: 2.5rem;
   margin-bottom: 5rem;
-  align-items: center;
 }
 
 .row.reverse {
   flex-direction: row-reverse;
 }
 
-/* MAIN CARD (BIG) */
+/* =========================
+   MAIN CARD — INSTRUMENT
+========================= */
 .africa-card {
   flex: 2;
   background: #111;
-  border-radius: 16px;
+  border-radius: 18px;
   overflow: hidden;
   border: 1px solid #222;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
-.africa-card img {
+.africa-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+  border-color: #facc15;
+}
+
+/* image container follows GLOBAL rules */
+.africa-card .image-container img {
   width: 100%;
-  height: 320px;
+  height: auto;
+  aspect-ratio: 16 / 9;
   object-fit: cover;
   display: block;
 }
 
-.africa-card .image-wrap {
-  padding: 1.5rem;
-  padding-bottom: 0;
+/* content */
+.africa-card .card-body {
+  padding: 1.6rem;
 }
 
-.card-content {
-  padding: 1.5rem;
-}
-
-.card-content h2 {
+.africa-card h2 {
   font-size: 1.8rem;
   font-style: italic;
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.35rem;
 }
 
-.card-content .date {
+.africa-card .date {
   display: block;
   font-size: 0.85rem;
   color: #999;
   margin-bottom: 1rem;
 }
 
-.card-content p {
+.africa-card p {
   color: #ddd;
-  line-height: 1.6;
+  line-height: 1.65;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* SUBCARD (ROOT DESIGN) */
+
 .africa-subcard {
   flex: 1;
   background: #0c0c0c;
   border: 1px solid #1f1f1f;
-  border-radius: 16px;
-  padding: 1.25rem;
+  border-radius: 18px;
+  padding: 1.4rem;
   text-align: center;
-  transition: transform 0.35s ease-in-out, box-shadow 0.35s ease-in-out;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
   will-change: transform;
 }
 
 .africa-subcard:hover {
   transform: scale(1.035);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.45);
   border-color: #facc15;
 }
 
-.africa-subcard img {
+.africa-subcard .image-container img {
   width: 100%;
-  height: 180px;
+  height: auto;
+  max-height: 200px;
   object-fit: contain;
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
 }
 
 .africa-subcard h3 {
-  font-size: 1.1rem;
-  margin-bottom: 0.5rem;
+  font-size: 1.15rem;
+  margin-bottom: 0.6rem;
   color: #facc15;
 }
 
 .africa-subcard p {
   font-size: 0.9rem;
   color: #bbb;
-  line-height: 1.5;
+  line-height: 1.55;
 }
 
-/* MOBILE */
+/* =========================
+   MOBILE & TABLET
+========================= */
 @media (max-width: 900px) {
+
   .row,
   .row.reverse {
     flex-direction: column;
+    gap: 2.2rem;
   }
 
-  .africa-card img {
-    height: 260px;
+  .instruments-page {
+    padding-top: 7rem; /* prevents navbar overlap */
   }
-}
-.instrument-card {
-  transition: transform 0.35s ease-in-out, box-shadow 0.35s ease-in-out;
-  will-change: transform;
-}
 
-.instrument-card:hover {
-  transform: scale(1.035);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
-  border-color: #facc15;
+  .africa-card h2 {
+    font-size: 1.5rem;
+  }
+
+  .africa-card .image-container img {
+    aspect-ratio: 4 / 3;
+  }
+
+  .africa-subcard .image-container img {
+    max-height: 180px;
+  }
 }

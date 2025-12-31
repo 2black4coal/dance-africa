@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
 import BackgroundMusic from "./components/BackgroundMusic";
 
 // pages
@@ -6,18 +7,18 @@ import Home from "./pages/Home";
 import DanceStyles from "./pages/DanceStyles";
 import Gallery from "./pages/Gallery";
 import Instruments from "./pages/Instruments";
-
 import Events from "./pages/Events";
 import Support from "./pages/Support";
 import Advertise from "./pages/Advertise";
 import Donate from "./pages/Donate";
 
-
-
 export default function App() {
   return (
     <BrowserRouter>
-      {/* 🔥 GLOBAL MUSIC — MOUNTS ONCE */}
+      {/* Keep your existing Navbar intact */}
+      <Navbar />
+
+      {/* Lower-left corner music UI only */}
       <BackgroundMusic />
 
       <Routes>
@@ -30,7 +31,6 @@ export default function App() {
         <Route path="/advertise" element={<Advertise />} />
         <Route path="/donate" element={<Donate />} />
       </Routes>
-
     </BrowserRouter>
   );
 }

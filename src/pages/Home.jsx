@@ -1,16 +1,17 @@
 import { motion } from "framer-motion";
-import Navbar from "../components/Navbar";
+
 import AdBanner from "../components/AdBanner";
-import BackgroundMusic from "../components/BackgroundMusic";
+
 import "../styles/main.css";
 import "../styles/home.css";
 
 export default function Home() {
   return (
+   
     <section className="home-page">
-      <Navbar overlay />
+   
 
-<p className="page-subtitle"></p>
+
 
 <div className="home-center">
   <div className="home-content">
@@ -31,7 +32,7 @@ export default function Home() {
     {/* Text animation – mature & subtle (now grows as it appears) */}
     {/* TITLE – ceremonial rise + soft drop */}
 <motion.h1
-  className="page-title"
+  className="home-content "
   initial={{ opacity: 0, y: 28, scale: 0.96 }}
   animate={{ opacity: 1, y: 0, scale: 1 }}
   transition={{
@@ -50,7 +51,7 @@ export default function Home() {
 
 {/* SUBTITLE – delayed, softer rise */}
 <motion.p
-  className="page-subtitle"
+  className="home-content "
   initial={{ opacity: 0, y: 18, scale: 0.97 }}
   animate={{ opacity: 1, y: 0, scale: 1 }}
   transition={{

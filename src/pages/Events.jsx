@@ -1,15 +1,11 @@
 import { motion } from "framer-motion";
-import Navbar from "../components/Navbar";
 import "../styles/main.css";
 import "../styles/events.css";
-
 
 export default function Events() {
   return (
     <section className="events-page">
-      <Navbar />
-
-      <h1 className="page-title">African Cultural Events</h1>
+  <h1 className="page-title">African Cultural Events</h1>
       <p className="page-subtitle">
         Celebrating African dance, music, festivals and the foods that define
         our heritage.

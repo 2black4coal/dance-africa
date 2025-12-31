@@ -1,83 +1,100 @@
-/* =========================
-   NAVBAR — PURE TRANSPARENT
-========================= */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Script&family=Allura&family=Parisienne&display=swap');
 
 .navbar {
-  position: fixed;       /* floats above page */
+  position: fixed;
   top: 1.5rem;
   left: 0;
   right: 0;
   z-index: 1000;
-
+  gap: 1.2rem;
   display: flex;
   justify-content: center;
+  
+  letter-spacing: 0.12em;
+  opacity: 0.9;
 }
 
-/* NAV CONTAINER */
-.navbar .site-nav {
-  display: flex;
-  gap: 1.5rem;
-  /* remove ALL background, borders, shadows */
-  background: none !important;
-  backdrop-filter: none !important;
-  -webkit-backdrop-filter: none !important;
-  border: none !important;
-  box-shadow: none !important;
 
-  padding: 0;
-  margin: 0;
-}
 
-/* LINKS ONLY */
+
+
+
 .navbar .nav-link {
-  font-family: Arial, sans-serif;
-  font-size: .10rem;
-  font-weight: 500;
-  font-style: italic;
-  line-height: 1;
-
-  color: rgba(255, 255, 255, 0.9); /* visible against page */
+  font-family: 'Cormorant Script', 'Allura', 'Parisienne', cursive;
+  font-size: 1.05rem;
+  font-weight: 200;          /* extremely thin */
+  letter-spacing: 0.05em;    /* airy but controlled */
+  color: rgba(255, 255, 255, 0.92);
   text-decoration: none;
-
-  padding: 6px 4px;
+  padding: 6px 6px;
   white-space: nowrap;
-
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
-.navbar{
-  font-family: 'Caveat', cursive;
-}
-/* HOVER */
+
+
 .navbar .nav-link:hover {
   color: #facc15;
   transform: translateY(-1px);
 }
 
-/* ACTIVE */
-.navbar .nav-link.active {
-  color: #facc15;
-}
+
+/* DONATE BUTTON */
 .donate-btn {
-  background: transparent;
+  text-decoration: none !important;
+  color: #facc15;
   border: 1px solid #facc15;
-  border-radius: 20px;
-  padding: 6px 14px;
+  border-radius: 14px;
+  padding: 4px 10px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: transparent;
   cursor: pointer;
+
+  animation: goldGlow 2.2s ease-in-out infinite;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 .donate-btn:hover {
   background: #facc15;
   color: #000;
 }
-.gallery-nav {
-  position: fixed;
-  top: 2rem;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 100;
+
+/* MOBILE FIX */
+@media (max-width: 768px) {
+  .navbar .site-nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.6rem;
+  }
+
+ 
+  .donate-btn {
+    font-size: 0.70rem;
+    padding: 4px 10px;
+  }
 }
-.navbar ul {
-  display: flex;
-  gap: 0.5rem;   /* 🔥 increase / decrease this */
+
+/* GOLD GLOW ANIMATION */
+@keyframes goldGlow {
+  0% {
+    box-shadow: 0 0 6px rgba(250, 204, 21, 0.4),
+                0 0 12px rgba(250, 204, 21, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 12px rgba(250, 204, 21, 0.7),
+                0 0 24px rgba(250, 204, 21, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 6px rgba(250, 204, 21, 0.4),
+                0 0 12px rgba(250, 204, 21, 0.3);
+  }
 }
+
+
+/* =========================
+   END OF NAVBAR STYLES
+
+========================= */
+
+

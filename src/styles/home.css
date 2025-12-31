@@ -18,16 +18,10 @@
     
 }
 
-/* NAVBAR */
-.home-page nav {
-  position: relative;
-  z-index: 50;
-  padding-top: 1.5rem;
-}
 
-/* CENTER STAGE */
 
-/* CONTENT WRAPPER */
+
+
 .home-content {
   max-width: 800px;
   margin: 0 auto;
@@ -46,7 +40,7 @@
 }
 
 /* TITLE */
-.home-content h1 {
+.home-content p {
   margin-top: 1.5rem;
   font-size: 2.5rem;
   font-weight: 800;
@@ -73,15 +67,7 @@
 }
 
 /* RESPONSIVE */
-@media (min-width: 768px) {
-  .home-content h1 {
-    font-size: 3rem;
-  }
 
-  .home-content p {
-    font-size: 1.3rem;
-  }
-}
 
 @media (max-width: 600px) {
   .home-map {
@@ -94,12 +80,6 @@
    
    
   }
-
-  .home-content p {
-    font-size: 1rem;
-  }
-  
 }
-/* =========================
-   FORCE TINY, FAINT TITLE
-========================= */
+ 
+
