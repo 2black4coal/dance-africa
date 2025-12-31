@@ -16,17 +16,19 @@
 }
 
 /* =========================
-   FLEX CONTAINER (MISSING BEFORE)
+   FLEX CONTAINER (NO BLOCK)
 ========================= */
 .site-nav {
   display: flex;
   align-items: center;
   gap: clamp(0.6rem, 1.8vw, 1.4rem);
 
-  background: rgba(0, 0, 0, 0.35);
-  padding: 0.55rem 1.2rem;
-  border-radius: 14px;
-  backdrop-filter: blur(6px);
+  /* ❌ removed background block */
+  /* ❌ removed blur */
+  /* ❌ removed padding bubble */
+  /* ❌ removed border radius */
+
+  padding: 0; /* clean, floating */
 }
 
 /* =========================
@@ -53,7 +55,7 @@
 
 .nav-link:hover {
   color: #facc15;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.05); /* subtle hover only */
   transform: translateY(-1px);
 }
 
@@ -102,7 +104,6 @@
 
   .site-nav {
     gap: 0.6rem;
-    padding: 0.45rem 0.8rem;
   }
 
   .nav-link {
