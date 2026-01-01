@@ -106,3 +106,7 @@
   color: #ddd;
   font-family: cursive;
 }
+/* FIX GLOBAL max-width OVERRIDE */
+.dance-grid > * {
+  max-width: none !important;
+}
