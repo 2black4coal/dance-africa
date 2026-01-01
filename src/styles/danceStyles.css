@@ -1,140 +1,108 @@
 /* =========================
-   DANCE STYLES PAGE
+   PAGE WRAPPER
 ========================= */
 .danceStyles-page {
   min-height: 100vh;
   background: #050505;
   color: #fff;
-  padding: 3rem;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: clamp(1.6rem, 4vw, 3rem);
 }
 
 /* =========================
-   GRID LAYOUT
+   RESPONSIVE GRID
 ========================= */
 .dance-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* default 3 cards per row */
-  gap: 2rem;
-  max-width: 1200px;
+
+  /* 📱 PHONES → 1 card per row */
+  grid-template-columns: 1fr;
+
+  gap: clamp(1.4rem, 3vw, 2.4rem);
+  max-width: 1280px;
   margin: 0 auto;
 }
 
 /* =========================
-   CARD STYLES
+   TABLETS → 2 cards per row
+========================= */
+@media (min-width: 720px) {
+  .dance-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* =========================
+   DESKTOPS → 3 cards per row
+========================= */
+@media (min-width: 1100px) {
+  .dance-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* =========================
+   CARD
 ========================= */
 .dance-style-card {
-  background: rgba(34, 36, 36, 0.4);
+  background: rgba(34, 36, 36, 0.42);
   border: 1px solid #222;
-  border-radius: 16px;
+  border-radius: 18px;
   overflow: hidden;
-  transition: transform 0.35s ease-in-out, box-shadow 0.35s ease-in-out;
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+
   will-change: transform;
 }
 
 .dance-style-card:hover {
-  transform: scale(1.035);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+  transform: scale(1.03);
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.45);
   border-color: #facc15;
 }
 
 /* =========================
-   IMAGE CONTAINER
+   IMAGE
 ========================= */
-.image-container {
+.dance-style-card .image-container {
   background: rgba(255, 255, 255, 0.05);
-  padding: 1.25rem;
+  padding: clamp(0.8rem, 2vw, 1.25rem);
   padding-bottom: 0;
 }
 
-.image-container img {
+.dance-style-card .image-container img {
   width: 100%;
-  height: 220px;
+  height: clamp(180px, 26vw, 240px);
   object-fit: cover;
-  border-radius: 12px;
+  border-radius: 14px;
   display: block;
-  transition: transform 0.3s ease;
-}
-
-.dance-style-card:hover .image-container img {
-  transform: scale(1.03);
 }
 
 /* =========================
-   CARD CONTENT
+   CONTENT
 ========================= */
 .card-body {
-  padding: 1.25rem;
+  padding: clamp(1rem, 2.4vw, 1.4rem);
 }
 
 .card-body h2 {
-  font-size: clamp(1.1rem, 2.2vw, 1.3rem);
-  font-family: 'Tempus Sans ITC', cursive;
-  margin-bottom: 0.5rem;
-  line-height: 1.2;
+  font-size: clamp(1.1rem, 2.6vw, 1.35rem);
+  font-family: "Tempus Sans ITC", cursive;
+  margin-bottom: 0.4rem;
 }
 
 .card-body .origin {
-  font-size: clamp(0.8rem, 1.6vw, 0.85rem);
-  color: #999;
-  margin-bottom: 0.75rem;
+  font-size: clamp(0.8rem, 2vw, 0.9rem);
+  color: #aaa;
+  margin-bottom: 0.7rem;
   display: block;
 }
 
 .card-body p {
-  font-size: clamp(0.85rem, 1.8vw, 0.95rem);
+  font-size: clamp(0.9rem, 2.2vw, 1rem);
+  line-height: 1.55;
   color: #ddd;
-  line-height: 1.5;
-}
-
-/* =========================
-   RESPONSIVE MEDIA QUERIES
-========================= */
-@media (max-width: 1024px) {
-  .dance-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 cards per row on tablets */
-    gap: 1.8rem;
-  }
-
-  .image-container img {
-    height: 200px;
-  }
-}
-
-@media (max-width: 768px) {
-  .dance-grid {
-    grid-template-columns: 1fr; /* 1 card per row on phones */
-    gap: 1.5rem;
-  }
-
-  .image-container img {
-    height: 180px;
-  }
-
-  .card-body h2 {
-    font-size: clamp(1rem, 5vw, 1.2rem);
-  }
-
-  .card-body p {
-    font-size: clamp(0.8rem, 4vw, 0.9rem);
-  }
-}
-
-@media (max-width: 480px) {
-  .dance-grid {
-    grid-template-columns: 1fr; /* strictly 1 card per row for small phones */
-    gap: 1rem;
-  }
-
-  .image-container img {
-    height: 160px;
-  }
-
-  .card-body h2 {
-    font-size: 1.05rem;
-  }
-
-  .card-body p {
-    font-size: 0.85rem;
-  }
+  font-family: cursive;
 }
