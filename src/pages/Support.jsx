@@ -126,7 +126,7 @@ export default function Support() {
             </p>
 
             <div className="donation-options">
-              <DonateButton amount={500} label="$5" />
+              <DonateButton amount={500} label="$5" />  
               <DonateButton amount={1000} label="$10" />
               <DonateButton amount={2500} label="$25" />
               <DonateButton amount={5000} label="Custom" />

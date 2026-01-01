@@ -1,6 +1,6 @@
-export const runtime = "nodejs18.x";
-
-import Stripe from "stripe";
+import Stripe from "stripe"; 
+import dotenv from "dotenv"; 
+dotenv.config();
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
 export default async function handler(req, res) {
@@ -21,7 +21,7 @@ export default async function handler(req, res) {
           price_data: {
             currency,
             product_data: {
-              name: "Support Dance Africa 🌍💃🏿 and the Project; Light up Africa initiative",
+              name: "Support Dance Africa 🌍💃🏿 and the Project; Light up Africa tiative",
             },
             unit_amount: amount * 100, // convert dollars → cents
           },

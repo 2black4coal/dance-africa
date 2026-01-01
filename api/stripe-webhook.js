@@ -49,7 +49,7 @@ export default async function handler(req, res) {
 
   if (event.type === "checkout.session.completed") {
     await resend.emails.send({
-      from: "Dance Africa <supports@dance-africa.org>",
+      from: "Dance Africa <support@dance-africa.org>",
       to: email,
       subject: "Thank You for Supporting Dance Africa",
       html: `<p>Your donation of $${amount} was successful. Thank you!</p>`,
@@ -58,7 +58,7 @@ export default async function handler(req, res) {
 
   if (event.type === "payment_intent.payment_failed") {
     await resend.emails.send({
-      from: "Dance Africa <supports@danceafrica.org>",
+      from: "Dance Africa <support@dance-africa.org>",
       to: email,
       subject: "Your Donation Failed",
       html: `<p>Your donation attempt failed. Please try again.</p>`,

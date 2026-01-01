@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import DonateButton from "../components/DonateButton";
 import "../styles/navbar.css";
 
 export default function Navbar() {
@@ -13,8 +14,8 @@ export default function Navbar() {
         <NavLink to="/support" className="nav-link">Support</NavLink>
         <NavLink to="/advertise" className="nav-link">Advertise</NavLink>
 
-        {/* ❤️ DONATE BUTTON */}
-        <NavLink to="/donate" className="donate-btn">❤️ Donate</NavLink>
+        {/* ❤️ DONATE BUTTON (Stripe-enabled) */}
+        <DonateButton amount={500} label="❤️ Donate" />
       </div>
     </nav>
   );

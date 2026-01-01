@@ -133,3 +133,8 @@
     box-shadow: 0 0 6px rgba(250, 204, 21, 0.35);
   }
 }
+/* NAVBAR DONATE BUTTON — KEEP TEXT VISIBLE ON HOVER */
+.navbar .donate-btn:hover {
+  color: #050505 !important; /* deep charcoal, always readable */
+  background: #facc15;
+}
