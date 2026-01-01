@@ -18,7 +18,8 @@ const containerVariants = {
 
 export default function Advertise() {
   return (
-    <section className="advertise-page">
+    <section className="advertise-page page-section">
+
      
 
       <h1 className="page-title">Partner With the Pulse of Africa</h1>

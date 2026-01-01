@@ -47,8 +47,8 @@ const data = [
 /* ---------------- COMPONENT ---------------- */
 export default function Instruments() {
   return (
-    <section className="instruments-page">
- 
+    <section className="instruments-page page-section">
+
 
       <h1 className="page-title">African Musical Instruments</h1>
       <p className="page-subtitle">

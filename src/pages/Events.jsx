@@ -4,8 +4,9 @@ import "../styles/events.css";
 
 export default function Events() {
   return (
-    <section className="events-page">
-  <h1 className="page-title">African Cultural Events</h1>
+    <section className="events-page page-section">
+
+      <h1 className="page-title">African Cultural Events</h1>
       <p className="page-subtitle">
         Celebrating African dance, music, festivals and the foods that define
         our heritage.
@@ -22,7 +23,6 @@ export default function Events() {
             transition={{ duration: 0.6 }}
           >
             {/* MAIN EVENT CARD */}
-           
             <div className="africa-card card-hover">
               <div className="image-container">
                 <img src={item.eventImage} alt={item.eventName} />
@@ -36,19 +36,17 @@ export default function Events() {
               </div>
             </div>
 
-      {/* FOOD CARD */}
-{/* FOOD CARD */}
-<div className="africa-subcard card-hover">
-  <div className="image-container">
-    <img src={item.foodImage} alt={item.foodName} />
-  </div>
-  <div className="card-body">
-    <h3>{item.foodName}</h3>
-    <span className="region">{item.foodRegion}</span>
-    <p>{item.foodDescription}</p>
-  </div>
-</div>
-
+            {/* FOOD CARD */}
+            <div className="africa-subcard card-hover">
+              <div className="image-container">
+                <img src={item.foodImage} alt={item.foodName} />
+              </div>
+              <div className="card-body">
+                <h3>{item.foodName}</h3>
+                <span className="region">{item.foodRegion}</span>
+                <p>{item.foodDescription}</p>
+              </div>
+            </div>
 
           </motion.div>
         ))}
@@ -56,6 +54,8 @@ export default function Events() {
     </section>
   );
 }
+
+
 
 /* ---------------- DATA ---------------- */
 

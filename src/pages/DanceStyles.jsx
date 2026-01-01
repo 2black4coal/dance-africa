@@ -270,13 +270,9 @@ const danceStyles = [
 
 ];
 
-/* ===============================
-   COMPONENT
-================================ */
 export default function DanceStyles() {
   return (
-    <section className="danceStyles-page">
-
+    <section className="danceStyles-page page-section">
 
       <h1 className="page-title">Explore African Dance Styles</h1>
       <p className="page-subtitle">
@@ -285,7 +281,7 @@ export default function DanceStyles() {
       </p>
 
       <motion.div
-        className="dance-grid"
+        className="grid grid-3 grid-center"
         initial={{ opacity: 0, scale: 0.99 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.9, ease: "easeOut" }}

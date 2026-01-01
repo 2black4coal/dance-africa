@@ -16,7 +16,8 @@ export default function App() {
   return (
     <BrowserRouter>
       {/* Keep your existing Navbar intact */}
-      <Navbar />
+     {location.pathname !== "/gallery" && <Navbar />}
+
 
       {/* Lower-left corner music UI only */}
       <BackgroundMusic />

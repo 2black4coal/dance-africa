@@ -11,7 +11,8 @@ export default function Support() {
   return (
     <>
      
-      <section className="support-page">
+      <section className="support-page page-section">
+
         <motion.div
           className="support-container"
           initial={{ opacity: 0, scale: 0.98, y: 24 }}

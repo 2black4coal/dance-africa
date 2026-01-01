@@ -8,15 +8,15 @@
   overflow: hidden;
 }
 
-.gallery-image {
-  position: absolute;
-  inset: 0;
+/* FLOATING NAVBAR */
+.gallery-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
+  z-index: 50;
+  pointer-events: auto;
 }
-
 
 /* FULLSCREEN SLIDER AREA */
 .gallery-slider {
@@ -43,29 +43,96 @@
   inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;   /* 🔥 makes each image fill the screen */
+  object-fit: cover;
   display: block;
 }
 
-/* OPTIONAL: subtle fade overlay for readability */
+/* OVERLAY */
 .gallery-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.25);
+  background: radial-gradient(
+    circle at center,
+    rgba(0, 0, 0, 0.15),
+    rgba(0, 0, 0, 0.45)
+  );
   pointer-events: none;
 }
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
   .gallery-image {
-    object-fit: contain; /* On small screens, avoid cropping */
+    object-fit: contain;
     background-color: #000;
   }
 }
-.gallery-overlay {
-  background: radial-gradient(
-    circle at center,
-    rgba(0, 0, 0, 0.15),
-    rgba(0, 0, 0, 0.45)
-  );
+
+
+.btn {
+  display: inline-block;
+  padding: var(--space-xs) var(--space-md);
+  border-radius: 8px;
+  font-family: var(--font-body);
+  font-size: var(--font-sm);
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #000;
+}
+
+.btn-primary:hover {
+  background: #ffe580;
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid var(--accent);
+  color: var(--accent);
+}
+
+.btn-outline:hover {
+  background: var(--accent);
+  color: #000;
+}
+:root {
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.25);
+  --shadow-md: 0 8px 20px rgba(0, 0, 0, 0.35);
+  --shadow-lg: 0 12px 30px rgba(0, 0, 0, 0.45);
+}
+
+.shadow-sm { box-shadow: var(--shadow-sm); }
+.shadow-md { box-shadow: var(--shadow-md); }
+.shadow-lg { box-shadow: var(--shadow-lg); }
+/* Fade In */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn var(--fade-duration) ease forwards;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+/* Slide Up */
+.slide-up {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideUp var(--fade-duration) ease forwards;
+}
+
+@keyframes slideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hover Scale */
+.hover-scale:hover {
+  transform: scale(var(--hover-scale));
+  transition: transform 0.3s ease;
 }

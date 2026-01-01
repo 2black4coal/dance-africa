@@ -1,144 +1,37 @@
+/* =========================
+   FIX UNEVEN HEIGHTS WHILE KEEPING MAIN CARD BIGGER
+========================= */
 
-.instruments-page {
-  min-height: 100vh;
-  background: #050505;
-  color: #fff;
-  padding: 3rem;
-  font-size: 0.95rem;
-}
-
-
-
-
-.rows {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
+/* Make both cards stretch vertically */
 .row {
-  display: flex;
   align-items: stretch;
-  gap: 2.5rem;
-  margin-bottom: 5rem;
 }
 
-.row.reverse {
-  flex-direction: row-reverse;
-}
-
-/* =========================
-   MAIN CARD — INSTRUMENT
-========================= */
-.africa-card {
-  flex: 2;
-  background: #111;
-  border-radius: 18px;
-  overflow: hidden;
-  border: 1px solid #222;
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
-}
-
-.africa-card:hover {
-  transform: scale(1.02);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
-  border-color: #facc15;
-}
-
-/* image container follows GLOBAL rules */
-.africa-card .image-container img {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-  display: block;
-}
-
-/* content */
-.africa-card .card-body {
-  padding: 1.6rem;
-}
-
-.africa-card h2 {
-  font-size: 1.8rem;
-  font-style: italic;
-  margin-bottom: 0.35rem;
-}
-
-.africa-card .date {
-  display: block;
-  font-size: 0.85rem;
-  color: #999;
-  margin-bottom: 1rem;
-}
-
-.africa-card p {
-  color: #ddd;
-  line-height: 1.65;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-
+/* Ensure both cards behave like vertical flex containers */
+.africa-card,
 .africa-subcard {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Prevent images from shrinking */
+.africa-card .image-container,
+.africa-subcard .image-container {
+  flex-shrink: 0;
+}
+
+/* Let card-body fill remaining height */
+.africa-card .card-body,
+.africa-subcard .card-body {
   flex: 1;
-  background: #0c0c0c;
-  border: 1px solid #1f1f1f;
-  border-radius: 18px;
-  padding: 1.4rem;
-  text-align: center;
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
-  will-change: transform;
+  display: flex;
+  flex-direction: column;
 }
 
-.africa-subcard:hover {
-  transform: scale(1.035);
-  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.45);
-  border-color: #facc15;
-}
-
-.africa-subcard .image-container img {
-  width: 100%;
-  height: auto;
-  max-height: 200px;
-  object-fit: contain;
-  margin-bottom: 1.2rem;
-}
-
-.africa-subcard h3 {
-  font-size: 1.15rem;
-  margin-bottom: 0.6rem;
-  color: #facc15;
-}
-
-.africa-subcard p {
-  font-size: 0.9rem;
-  color: #bbb;
-  line-height: 1.55;
-}
-
-/* =========================
-   MOBILE & TABLET
-========================= */
-@media (max-width: 900px) {
-
-  .row,
-  .row.reverse {
-    flex-direction: column;
-    gap: 2.2rem;
-  }
-
-  .instruments-page {
-    padding-top: 7rem; /* prevents navbar overlap */
-  }
-
-  .africa-card h2 {
-    font-size: 1.5rem;
-  }
-
-  .africa-card .image-container img {
-    aspect-ratio: 4 / 3;
-  }
-
-  .africa-subcard .image-container img {
-    max-height: 180px;
-  }
+/* Narrow, tiny, elegant typography */
+.africa-card .card-body,
+.africa-subcard .card-body {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(0.85rem, 1.8vw, 1rem);
+  line-height: 1.45;
 }

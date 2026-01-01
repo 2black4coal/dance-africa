@@ -3,110 +3,130 @@
 ========================= */
 .danceStyles-page {
   min-height: 100vh;
-  background: #050505;
-  color: #fff;
-  padding: clamp(1.6rem, 4vw, 3rem);
+  background: var(--page-bg);
+  color: var(--text-light);
+  padding-left: clamp(0.75rem, 2.5vw, 1.25rem);
+  padding-right: clamp(0.75rem, 2.5vw, 1.25rem);
 }
 
 /* =========================
-   RESPONSIVE GRID
+   PAGE TITLES
+========================= */
+.danceStyles-page .page-title,
+.danceStyles-page .page-subtitle {
+  text-align: center;
+  transition: transform 0.35s ease;
+}
+
+.danceStyles-page .page-title:hover,
+.danceStyles-page .page-subtitle:hover {
+  transform: scale(1.03);
+}
+
+/* =========================
+   RESPONSIVE GRID — CLEAN
 ========================= */
 .dance-grid {
   display: grid;
-
-  /* 📱 PHONES → 1 card per row */
-  grid-template-columns: 1fr;
-
-  gap: clamp(1.4rem, 3vw, 2.4rem);
-  max-width: 1280px;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 0.65rem;
+  row-gap: 1.1rem;
+  max-width: 1400px;
   margin: 0 auto;
+  padding: 0 0.75rem;
 }
 
-/* =========================
-   TABLETS → 2 cards per row
-========================= */
-@media (min-width: 720px) {
+/* Tablet */
+@media (max-width: 1024px) {
   .dance-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-/* =========================
-   DESKTOPS → 3 cards per row
-========================= */
-@media (min-width: 1100px) {
+/* Phone */
+@media (max-width: 768px) {
   .dance-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr;
+    column-gap: 0;
+    row-gap: 0.9rem;
   }
 }
 
 /* =========================
-   CARD
+   CARD — SHORTER + CLEAN
 ========================= */
 .dance-style-card {
-  background: rgba(34, 36, 36, 0.42);
-  border: 1px solid #222;
-  border-radius: 18px;
+  background: var(--card-main-bg);
+  border: 1px solid var(--card-main-border);
+  border-radius: 16px;
   overflow: hidden;
-
-  transition:
-    transform 0.35s ease,
-    box-shadow 0.35s ease,
-    border-color 0.35s ease;
-
-  will-change: transform;
+  display: flex;
+  flex-direction: column;
+  padding: clamp(0.4rem, 1vw, 0.8rem);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .dance-style-card:hover {
-  transform: scale(1.03);
-  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.45);
-  border-color: #facc15;
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--accent);
 }
 
 /* =========================
-   IMAGE
+   IMAGE — DOMINANT + WIDER
 ========================= */
 .dance-style-card .image-container {
-  background: rgba(255, 255, 255, 0.05);
-  padding: clamp(0.8rem, 2vw, 1.25rem);
+  background: var(--image-frame-bg);
+  padding: clamp(0.45rem, 0.9vw, 0.75rem);
   padding-bottom: 0;
+  border-radius: 16px;
 }
 
 .dance-style-card .image-container img {
   width: 100%;
-  height: clamp(180px, 26vw, 240px);
+  height: clamp(320px, 40vw, 460px);
   object-fit: cover;
   border-radius: 14px;
   display: block;
+  transition: transform 0.45s ease, box-shadow 0.45s ease;
+}
+
+/* Hover zoom + gold glow */
+.dance-style-card .image-container:hover img {
+  transform: scale(1.06);
+  box-shadow: 0 8px 22px rgba(250, 204, 21, 0.28);
 }
 
 /* =========================
-   CONTENT
+   CARD BODY — COMPACT
 ========================= */
 .card-body {
-  padding: clamp(1rem, 2.4vw, 1.4rem);
+  padding: clamp(0.6rem, 1.2vw, 1rem);
 }
 
 .card-body h2 {
-  font-size: clamp(1.1rem, 2.6vw, 1.35rem);
-  font-family: "Tempus Sans ITC", cursive;
-  margin-bottom: 0.4rem;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(0.95rem, 2.6vw, 1.15rem);
+  margin-bottom: 0.25rem;
 }
 
 .card-body .origin {
-  font-size: clamp(0.8rem, 2vw, 0.9rem);
-  color: #aaa;
-  margin-bottom: 0.7rem;
+  font-size: 0.7rem;
+  color: var(--text-faint);
+  margin-bottom: 0.45rem;
   display: block;
 }
 
 .card-body p {
-  font-size: clamp(0.9rem, 2.2vw, 1rem);
-  line-height: 1.55;
-  color: #ddd;
-  font-family: cursive;
-}
-/* FIX GLOBAL max-width OVERRIDE */
-.dance-grid > * {
-  max-width: none !important;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  line-height: 1.4;
+  color: var(--text-muted);
+
+  /* Clamp text */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }

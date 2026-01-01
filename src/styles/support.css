@@ -1,43 +1,46 @@
-/* PAGE LAYOUT */
+/* =========================
+   SUPPORT PAGE — UNIFIED
+========================= */
 .support-page {
   min-height: 100vh;
   background: #050505;
   color: #e5e5e5;
-  padding: 3rem;
-  font-family: 'carnet', cursive;
+  font-family: "Cormorant Garamond", serif;
 }
 
+/* Main container */
 .support-container {
   max-width: 900px;
   margin: 0 auto;
   background: rgba(34, 36, 36, 0.45);
   border: 1px solid #1f1f1f;
   border-radius: 20px;
-  padding: 3rem 2rem;
+  padding: clamp(2rem, 4vw, 3rem) clamp(1.5rem, 3vw, 2rem);
 }
 
-/* HEADER ROW — UPDATED */
+/* =========================
+   PROJECT LIGHT SECTION
+========================= */
+.project-light {
+  margin-top: clamp(2rem, 4vw, 2.5rem);
+  padding: clamp(1.2rem, 3vw, 1.75rem);
+  border-left: 3px solid #facc15;
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: 12px;
+}
+
 .project-light-header {
   display: flex;
-  align-items: center; /* flame aligned center */
+  align-items: center;
   gap: 1rem;
-  margin-bottom: 0.75rem;
-  overflow: visible;       /* 🔥 REQUIRED */
+  overflow: visible;
   flex-wrap: nowrap;
 }
 
-
-
-/* PROJECT LIGHT SECTION */
-.project-light {
-  margin-top: 2.5rem;
-  padding: 1.75rem;
-  border-left: 3px solid #facc15;
-  background: rgba(0, 0, 0, 0.35);
-}
-
 .project-light h2 {
-  font-size: clamp(1.2rem, 3.5vw, 1.6rem);
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic;
+  font-size: clamp(1.2rem, 3vw, 1.6rem);
   color: #facc15;
   margin: 0;
   transition: transform 0.3s ease-in-out;
@@ -47,14 +50,19 @@
   transform: scale(1.05);
 }
 
-/* DONATION SECTION */
+/* =========================
+   DONATION SECTION
+========================= */
 .donation-section {
-  margin-top: 3rem;
+  margin-top: clamp(2.5rem, 5vw, 3rem);
   text-align: center;
 }
 
 .donation-section h3 {
-  font-size: 1.4rem;
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic;
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
+  color: #facc15;
   margin-bottom: 0.5rem;
 }
 
@@ -65,7 +73,7 @@
   flex-wrap: wrap;
 }
 
-/* BUTTONS */
+/* Donate button */
 .donate-btn {
   background: transparent;
   border: 2px solid #facc15;
@@ -85,11 +93,9 @@
     0 0 25px rgba(250, 204, 21, 0.4);
 }
 
-/* REAL OLYMPIC FLAME — UPDATED */
-
-
-
-/* REALISTIC SVG OLYMPIC FLAME */
+/* =========================
+   FLAME — KEEP YOUR EFFECT
+========================= */
 .candle-flame {
   position: relative;
   width: 32px;
@@ -102,7 +108,6 @@
   margin-left: 0.25rem;
 }
 
-/* steady, brighter radial glow behind the flame */
 .candle-flame::after {
   content: "";
   position: absolute;
@@ -111,7 +116,12 @@
   width: 110px;
   height: 110px;
   transform: translate(-50%, -50%);
-  background: radial-gradient(circle, rgba(255,235,160,0.88) 0%, rgba(255,185,75,0.56) 36%, rgba(255,120,30,0.24) 65%, rgba(255,60,0,0) 85%);
+  background: radial-gradient(circle,
+    rgba(255,235,160,0.88) 0%,
+    rgba(255,185,75,0.56) 36%,
+    rgba(255,120,30,0.24) 65%,
+    rgba(255,60,0,0) 85%
+  );
   border-radius: 50%;
   filter: blur(12px);
   z-index: -1;
@@ -120,14 +130,9 @@
   animation: glowRadiate 3.2s ease-in-out infinite;
 }
 
-.candle-flame path {
-  vector-effect: non-scaling-stroke;
-}
-
 .candle-flame .flame-core {
   mix-blend-mode: screen;
   transform-origin: 50% 85%;
-  /* subtle CSS fallback flicker */
   animation: coreFlicker 1.6s ease-in-out infinite;
 }
 
@@ -155,9 +160,9 @@
   100% { transform: scale(1); opacity: 0.94; }
 }
 
-
-
-/* MOBILE */
+/* =========================
+   MOBILE
+========================= */
 @media (max-width: 600px) {
   .support-container {
     padding: 2rem 1.2rem;

@@ -3,7 +3,8 @@ import "../styles/home.css";
 
 export default function Home() {
   return (
-    <section className="home-page">
+    <section className="home-page page-section">
+
       <div className="home-center">
         <div className="home-content">
 

@@ -1,24 +1,24 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-
+import Navbar from "../components/Navbar";
 import "../styles/gallery.css";
 
 const images = [
-  "/images/gallery/gallery1.jpg",  
+  "/images/gallery/gallery1.jpg",
   "/images/gallery/gallery2.jpg",
   "/images/gallery/gallery3.jpg",
   "/images/gallery/gallery4.jpg",
   "/images/gallery/gallery5.jpg",
   "/images/gallery/zulu-women2.jpg",
-"/images/gallery/mask-cameroon.jpg",
-    "/images/gallery/gallery11.jpg",
-    "/images/gallery/gallery12.webp",
-    "/images/gallery/gallery13.jpg",
-    "/images/gallery/dancers-Sotho.webp",
-    "/images/gallery/african-tribal-.avif",
-    "/images/gallery/Dwa.jpg",
+  "/images/gallery/mask-cameroon.jpg",
+  "/images/gallery/gallery11.jpg",
+  "/images/gallery/gallery12.webp",
+  "/images/gallery/gallery13.jpg",
+  "/images/gallery/dancers-Sotho.webp",
+  "/images/gallery/african-tribal-.avif",
+  "/images/gallery/Dwa.jpg",
   "/images/gallery/drum-m.jpg",
-  "/images/gallery/gallery5.jpg",
+  "/images/gallery/gallery5.jpg"
 ];
 
 export default function Gallery() {
@@ -27,6 +27,7 @@ export default function Gallery() {
 
   const lastImageRef = useRef(current);
   const navTimerRef = useRef(null);
+  const movementRef = useRef(false);
 
   const getRandomImage = () => {
     let next;
@@ -44,12 +45,16 @@ export default function Gallery() {
   }, []);
 
   const handleMouseMove = () => {
-    clearTimeout(navTimerRef.current);
-    setShowNav(true);
+    if (!movementRef.current) {
+      movementRef.current = true;
+      setShowNav(true);
+    }
 
+    clearTimeout(navTimerRef.current);
     navTimerRef.current = setTimeout(() => {
       setShowNav(false);
-    }, 3500);
+      movementRef.current = false;
+    }, 3000);
   };
 
   return (
@@ -58,10 +63,10 @@ export default function Gallery() {
         {showNav && (
           <motion.div
             className="gallery-nav"
-            initial={{ opacity: 0, y: -20 }}
+            initial={{ opacity: 0, y: -25 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.35, ease: "easeOut" }}
+            exit={{ opacity: 0, y: -25 }}
+            transition={{ duration: 0.4, ease: "easeOut" }}
           >
             <Navbar />
           </motion.div>

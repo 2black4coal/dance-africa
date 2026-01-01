@@ -1,51 +1,63 @@
+/* =========================
+   ADVERTISE PAGE — UNIFIED
+========================= */
 .advertise-page {
   min-height: 100vh;
-  padding: 3rem;
   background: #0a0a0a;
-  font-family: 'Cormorant Garamond', serif;
   color: #fff;
+  font-family: "Cormorant Garamond", serif;
 }
 
+/* =========================
+   AD SECTION GRID
+========================= */
 .ad-section {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: clamp(1.5rem, 3vw, 2.5rem);
   max-width: 1200px;
   margin: 0 auto;
+  margin-top: clamp(2rem, 5vw, 3rem);
 }
 
+/* =========================
+   AD CARDS — UNIFIED STYLE
+========================= */
 .ad-card {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid #333;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid #222;
   border-radius: 16px;
-  padding: 2rem;
+  padding: clamp(1.5rem, 3vw, 2rem);
   transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
 }
 
 .ad-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
   border-color: #facc15;
 }
 
+/* Card Titles — match Instruments page */
 .ad-card h2 {
-  font-size: 1.6rem;
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic;
+  font-size: clamp(1.4rem, 2vw, 1.7rem);
   color: #facc15;
-  margin-bottom: 1rem;
-  font-family: 'Viner Hand ITC', cursive;
+  margin-bottom: 0.8rem;
 }
 
+/* Card Body — match Instruments page */
 .ad-card p,
 .ad-card li {
-  font-size: 0.95rem;
-  line-height: 1.6;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: clamp(0.85rem, 1.6vw, 1rem);
+  line-height: 1.55;
   color: #ccc;
-  font-family: cursive;
-  font-style: italic;
 }
 
+/* Bullet list */
 .ad-card ul {
-  padding-left: 1.2rem;
+  padding-left: 1rem;
   list-style: none;
 }
 
@@ -55,12 +67,14 @@
   margin-right: 0.5rem;
 }
 
+/* Highlight Card */
 .highlight-card {
   background: #1a1a1a;
   border: 1px solid #facc15;
   text-align: center;
 }
 
+/* CTA Button */
 .cta-button {
   display: inline-block;
   margin-top: 1.2rem;
@@ -77,22 +91,26 @@
   background: #ffe580;
 }
 
-/* BRAND CAROUSEL */
+/* =========================
+   BRAND CAROUSEL
+========================= */
 .brand-carousel {
-  margin: 4rem auto;
+  margin: clamp(3rem, 6vw, 5rem) auto;
   text-align: center;
 }
 
 .brand-carousel h2 {
-  font-size: 1.5rem;
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic;
+  font-size: clamp(1.4rem, 2vw, 1.8rem);
   color: #facc15;
   margin-bottom: 1.5rem;
 }
 
 .carousel-track {
   display: flex;
+  gap: clamp(1.5rem, 3vw, 3rem);
   overflow-x: auto;
-  gap: 2rem;
   padding: 1rem 0;
   scroll-snap-type: x mandatory;
 }
@@ -102,13 +120,12 @@
   scroll-snap-align: center;
   width: 120px;
   height: 60px;
+  background: #111;
+  border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #111;
-  border-radius: 8px;
   padding: 0.5rem;
-  transition: transform 0.3s ease;
 }
 
 .logo-slide img {
@@ -122,11 +139,20 @@
   filter: grayscale(0%);
 }
 
-/* INQUIRY FORM */
+/* =========================
+   INQUIRY FORM
+========================= */
 .inquiry-form {
   max-width: 600px;
-  margin: 4rem auto;
+  margin: clamp(3rem, 6vw, 5rem) auto;
   text-align: center;
+}
+
+.inquiry-form h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic;
+  color: #facc15;
+  margin-bottom: 1rem;
 }
 
 .inquiry-form form {
@@ -142,42 +168,10 @@
   border: 1px solid #444;
   background: #111;
   color: #fff;
-  font-family: inherit;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .inquiry-form textarea {
   min-height: 120px;
   resize: vertical;
 }
-.brand-carousel {
-  padding: 3rem 0;
-  overflow: hidden;
-  text-align: center;
-}
-
-.brand-carousel h2 {
-  margin-bottom: 2rem;
-  font-size: 2rem;
-}
-
-.carousel-track {
-  display: flex;
-  gap: 3rem;
-  animation: scroll 25s linear infinite;
-}
-
-.logo-slide img {
-  height: 60px;
-  object-fit: contain;
-  opacity: 0.85;
-}
-
-@keyframes scroll {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
-
