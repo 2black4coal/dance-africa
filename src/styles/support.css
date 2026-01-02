@@ -189,12 +189,19 @@
 }
 
 
+/* =========================
+   SUPPORT PAGE — DONATE BUTTON TEXT TUNING
+========================= */
 .support-page .donate-btn {
-  min-width: clamp(60px, 6vw, 70px); /* ⭐ half the width */
+  min-width: clamp(60px, 6vw, 70px); /* keep your exact width */
   padding-left: clamp(0.95rem, 1.9vw, 1.35rem);
   padding-right: clamp(0.95rem, 1.9vw, 1.35rem);
-  font-size: clamp(0.82rem, 1.9vw, 1rem);
+
+  font-size: clamp(0.9rem, 2.2vw, 1.15rem); /* ⭐ slightly bigger */
+  font-weight: 300; /* ⭐ light, elegant */
+  letter-spacing: 0.2px; /* ⭐ subtle clarity */
 }
+
 
 
 
