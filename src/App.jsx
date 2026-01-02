@@ -1,8 +1,10 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import BackgroundMusic from "./components/BackgroundMusic";
+import DonationSuccess from "./pages/DonationSuccess";
+import DonationCancel from "./pages/DonationCancel";
 
-// pages
+
 import Home from "./pages/Home";
 import DanceStyles from "./pages/DanceStyles";
 import Gallery from "./pages/Gallery";
@@ -31,6 +33,8 @@ export default function App() {
         <Route path="/support" element={<Support />} />
         <Route path="/advertise" element={<Advertise />} />
         <Route path="/donate" element={<Donate />} />
+        <Route path="/donation-success" element={<DonationSuccess />} />
+        <Route path="/donation-cancel" element={<DonationCancel />} />
       </Routes>
     </BrowserRouter>
   );
