@@ -1,4 +1,4 @@
-import Stripe from "stripe"; 
+import Stripe from "stripe";
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
@@ -8,8 +8,11 @@ export default async function handler(req, res) {
   }
 
   try {
-   const amountNumber = Number(req.body.amount);
+    // Ensure body is parsed correctly on Vercel
+    const body = typeof req.body === "string" ? JSON.parse(req.body) : req.body;
+    const { amount, currency = "usd" } = body;
 
+    const amountNumber = Number(amount);
 
     const session = await stripe.checkout.sessions.create({
       mode: "payment",
@@ -23,8 +26,7 @@ export default async function handler(req, res) {
             product_data: {
               name: "Support Dance-Africa . Light-Up-Africa-Initiative 💡",
             },
-            unit_amount: amountNumber * 100
- // convert dollars → cents
+            unit_amount: amountNumber * 100,
           },
           quantity: 1,
         },
