@@ -1,25 +1,29 @@
 export default function DonateButton({ amount, label, className = "donate-btn" }) {
+  // Read last saved donation
+  const lastDonation = Number(localStorage.getItem("lastDonation"));
+
   // Determine which amount to use
-  const donationAmount =
-    amount ?? Number(localStorage.getItem("lastDonation")) ?? 10;
+  const donationAmount = amount ?? lastDonation;
 
   const handleDonate = async () => {
-    try {
-      // Save the last donation for fast Navbar use
-      localStorage.setItem("lastDonation", donationAmount);
+    // ⭐ If no amount is available, send user to Support page
+    if (!donationAmount) {
+      window.location.href = "/support";
+      return;
+    }
 
-      // Call backend API
+    // Save last donation for navbar fast-donate
+    localStorage.setItem("lastDonation", donationAmount);
+
+    try {
       const res = await fetch("/api/create-checkout-session", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ amount: donationAmount }), // dollars
+        body: JSON.stringify({ amount: donationAmount }),
       });
 
       const data = await res.json();
-
-      if (data.url) {
-        window.location.href = data.url;
-      }
+      if (data.url) window.location.href = data.url;
     } catch (err) {
       console.error("Stripe redirect failed:", err);
     }
@@ -27,7 +31,8 @@ export default function DonateButton({ amount, label, className = "donate-btn" }
 
   return (
     <button onClick={handleDonate} className={className}>
-      {label} {amount ? `($${donationAmount})` : ""}
+      {label}
+      {amount ? ` ($${amount})` : ""}
     </button>
   );
 }
