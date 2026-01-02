@@ -1,7 +1,7 @@
 export default function DonateButton({ amount, label, className = "donate-btn" }) {
   const handleDonate = async () => {
     try {
-      const res = await fetch("/https://dance-africa.vercel.app/api/create-checkout-session", {
+      const res = await fetch("https://dance-africa-dwh6mt0j3-2black4coals-projects.vercel.app/api/create-checkout-session", {
 
         method: "POST",
         headers: {
