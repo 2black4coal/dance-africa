@@ -1,25 +1,36 @@
-export default function DonateButton({ amount, label, className = "donate-btn" }) {
-  // Read last saved donation
+export default function DonateButton({ amount, custom, label, className = "donate-btn" }) {
   const lastDonation = Number(localStorage.getItem("lastDonation"));
-
-  // Determine which amount to use
   const donationAmount = amount ?? lastDonation;
 
   const handleDonate = async () => {
-    // ⭐ If no amount is available, send user to Support page
-    if (!donationAmount) {
+    let finalAmount = donationAmount;
+
+    // ⭐ Custom button logic — does NOT affect fixed buttons
+    if (custom) {
+      const input = prompt("Enter donation amount (USD):");
+
+      if (!input || isNaN(input) || Number(input) <= 0) {
+        alert("Please enter a valid amount.");
+        return;
+      }
+
+      finalAmount = Number(input);
+    }
+
+    // ⭐ Navbar Donate button fallback stays intact
+    if (!finalAmount) {
       window.location.href = "/support";
       return;
     }
 
-    // Save last donation for navbar fast-donate
-    localStorage.setItem("lastDonation", donationAmount);
+    // ⭐ Save last donation for navbar fast-donate
+    localStorage.setItem("lastDonation", finalAmount);
 
     try {
       const res = await fetch("/api/create-checkout-session", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ amount: donationAmount }),
+        body: JSON.stringify({ amount: finalAmount }),
       });
 
       const data = await res.json();
@@ -30,9 +41,8 @@ export default function DonateButton({ amount, label, className = "donate-btn" }
   };
 
   return (
-  <button onClick={handleDonate} className={className}>
-    {label}
-  </button>
-);
-
+    <button onClick={handleDonate} className={className}>
+      {label}
+    </button>
+  );
 }
