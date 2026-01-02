@@ -30,9 +30,9 @@ export default function DonateButton({ amount, label, className = "donate-btn" }
   };
 
   return (
-    <button onClick={handleDonate} className={className}>
-      {label}
-      {amount ? ` ($${amount})` : ""}
-    </button>
-  );
+  <button onClick={handleDonate} className={className}>
+    {label}
+  </button>
+);
+
 }

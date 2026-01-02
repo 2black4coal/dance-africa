@@ -193,13 +193,17 @@
    SUPPORT PAGE — DONATE BUTTON TEXT TUNING
 ========================= */
 .support-page .donate-btn {
-  min-width: clamp(60px, 6vw, 70px); /* keep your exact width */
-  padding-left: clamp(0.95rem, 1.9vw, 1.35rem);
-  padding-right: clamp(0.95rem, 1.9vw, 1.35rem);
+  /* ⭐ Reduce width so text feels larger */
+  min-width: clamp(50px, 5vw, 60px);
 
-  font-size: clamp(0.9rem, 2.2vw, 1.15rem); /* ⭐ slightly bigger */
-  font-weight: 300; /* ⭐ light, elegant */
-  letter-spacing: 0.2px; /* ⭐ subtle clarity */
+  /* ⭐ Reduce padding so the button shrinks proportionally */
+  padding-left: clamp(0.7rem, 1.4vw, 1rem);
+  padding-right: clamp(0.7rem, 1.4vw, 1rem);
+
+  /* ⭐ Keep your text exactly as you wanted */
+  font-size: clamp(0.9rem, 2.2vw, 1.15rem);
+  font-weight: 300;
+  letter-spacing: 0.2px;
 }
 
 
