@@ -5,6 +5,10 @@ const brandLogos = [
   { name: "Brand B", src: "/assets/logos/logo2.png" },
   { name: "Brand C", src: "/assets/logos/logo3.png" },
   { name: "Brand D", src: "/assets/logos/logo4.png" },
+  { name: "Toyota", src: "/assets/logos/toyota.jpg" },
+  { name: "Electric", src: "/assets/logos/electric.webp" },
+  { name: "Medical", src: "/assets/logos/medical-logo.jpg" },
+  { name: "Culture", src: "/assets/logos/culture.webp" },
 ];
 
 export default function BrandCarousel() {

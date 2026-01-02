@@ -188,16 +188,7 @@
   box-shadow: 0 0 14px rgba(250, 204, 21, 0.35);
 }
 
-/* =========================
-   SUPPORT PAGE — WIDER DONATE BUTTONS ONLY
-========================= */
 
-/* =========================
-   SUPPORT PAGE — VERY SLIGHTLY LARGER DONATE BUTTONS
-========================= */
-/* =========================
-   SUPPORT PAGE — PROPORTIONALLY SIZED DONATE BUTTONS
-========================= */
 .support-page .donate-btn {
   min-width: clamp(60px, 6vw, 70px); /* ⭐ half the width */
   padding-left: clamp(0.95rem, 1.9vw, 1.35rem);

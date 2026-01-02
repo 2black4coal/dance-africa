@@ -21,7 +21,7 @@ export default async function handler(req, res) {
           price_data: {
             currency,
             product_data: {
-              name: "Support Dance Africa 🌍💃🏿 and the Project; Light up Africa tiative",
+              name: "Support Dance Africa 🌍 Light Up Africa Initiative 💡 ",
             },
             unit_amount: amount * 100, // convert dollars → cents
           },
