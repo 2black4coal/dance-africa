@@ -8,7 +8,8 @@ export default async function handler(req, res) {
   }
 
   try {
-    const { amount, currency = "usd" } = req.body;
+   const amountNumber = Number(req.body.amount);
+
 
     const session = await stripe.checkout.sessions.create({
       mode: "payment",
@@ -20,9 +21,10 @@ export default async function handler(req, res) {
           price_data: {
             currency,
             product_data: {
-              name: "Support Dance Africa 🌍 Light Up Africa Initiative 💡 ",
+              name: "Support Dance-Africa . Light-Up-Africa-Initiative 💡",
             },
-            unit_amount: amount * 100, // convert dollars → cents
+            unit_amount: amountNumber * 100
+ // convert dollars → cents
           },
           quantity: 1,
         },
