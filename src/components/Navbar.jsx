@@ -15,7 +15,8 @@ export default function Navbar() {
         <NavLink to="/advertise" className="nav-link">Advertise</NavLink>
 
         {/* ❤️ DONATE BUTTON (Stripe-enabled) */}
-        <DonateButton amount={500} label="❤️ Donate" />
+        <DonateButton label="❤️ Donate" />
+
       </div>
     </nav>
   );
