@@ -1,29 +1,13 @@
+import { useState } from "react";
+import CustomAmountModal from "./CustomAmountModal";
+
 export default function DonateButton({ amount, custom, label, className = "donate-btn" }) {
+  const [showModal, setShowModal] = useState(false);
+
   const lastDonation = Number(localStorage.getItem("lastDonation"));
   const donationAmount = amount ?? lastDonation;
 
-  const handleDonate = async () => {
-    let finalAmount = donationAmount;
-
-    // ⭐ Custom button logic — does NOT affect fixed buttons
-    if (custom) {
-      const input = prompt("Enter donation amount (USD):");
-
-      if (!input || isNaN(input) || Number(input) <= 0) {
-        alert("Please enter a valid amount.");
-        return;
-      }
-
-      finalAmount = Number(input);
-    }
-
-    // ⭐ Navbar Donate button fallback stays intact
-    if (!finalAmount) {
-      window.location.href = "/support";
-      return;
-    }
-
-    // ⭐ Save last donation for navbar fast-donate
+  const startCheckout = async (finalAmount) => {
     localStorage.setItem("lastDonation", finalAmount);
 
     try {
@@ -40,9 +24,34 @@ export default function DonateButton({ amount, custom, label, className = "donat
     }
   };
 
+  const handleDonate = () => {
+    if (custom) {
+      setShowModal(true);
+      return;
+    }
+
+    if (!donationAmount) {
+      window.location.href = "/support";
+      return;
+    }
+
+    startCheckout(donationAmount);
+  };
+
   return (
-    <button onClick={handleDonate} className={className}>
-      {label}
-    </button>
+    <>
+      <button onClick={handleDonate} className={className}>
+        {label}
+      </button>
+
+      <CustomAmountModal
+        isOpen={showModal}
+        onClose={() => setShowModal(false)}
+        onSubmit={(amt) => {
+          setShowModal(false);
+          startCheckout(amt);
+        }}
+      />
+    </>
   );
 }
