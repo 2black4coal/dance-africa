@@ -42,6 +42,73 @@ const data = [
       "Neem root purifies and protects through traditional healing rituals.",
     rootImage: "/images/roots/neem-root.png",
   },
+
+{
+  id: 6,
+  name: "Ngoma Drum",
+  created: "Ancient Era",
+  description:
+    "A large ceremonial drum used in healing, initiation, and spiritual gatherings across Central and Southern Africa.",
+  instrumentImage: "/images/instruments/Ngoma.jpg",
+  rootName: "Devil’s Claw Root",
+  rootDescription:
+    "Devil’s claw root is used in pain relief and spiritual purification ceremonies.",
+  rootImage: "/images/roots/devils-claw-root.png",
+},
+{
+  id: 7,
+  name: "Algaita",
+  created: "Medieval Era",
+  description:
+    "A double-reed wind instrument used in royal courts and ceremonial music in the Sahel region.",
+  instrumentImage: "/images/instruments/Algaita.jpg",
+  rootName: "Myrrh Root",
+  rootDescription:
+    "Myrrh root is burned or prepared for protection, spiritual elevation, and ancestral reverence.",
+  rootImage: "/images/roots/myrrh-root.avif",
+},
+{
+  id: 8,
+  name: "Adungu",
+  created: "Pre-Colonial Era",
+  description:
+    "A bow harp traditionally played in storytelling and ceremonial events in East Africa.",
+  instrumentImage: "/images/instruments/adungu.jpg",
+  rootName: "Moringa Root",
+  rootDescription:
+    "Moringa root symbolizes vitality and is used for cleansing and strengthening the body.",
+  rootImage: "/images/roots/moringa-root.png",
+},
+{
+  id: 9,
+  name: "Riti (One-String Fiddle)",
+  created: "Ancient Era",
+  description:
+    "A bowed string instrument used by pastoral communities for oral history and cultural expression.",
+  instrumentImage: "/images/instruments/riti.jpg",
+  rootName: "Senna Root",
+  rootDescription:
+    "Senna root is used for detoxification and spiritual cleansing practices.",
+  rootImage: "/images/roots/senna-root.png",
+},
+{
+  id: 10,
+  name: "Udu",
+  created: "Ancient Era",
+  description:
+    "A clay pot drum used in ritual music and spiritual ceremonies, particularly among Igbo communities.",
+  instrumentImage: "/images/instruments/udu.jpg",
+  rootName: "Yohimbe Root",
+  rootDescription:
+    "Yohimbe root is associated with vitality, strength, and ceremonial empowerment.",
+  rootImage: "/images/roots/yohimbe.jpg",
+}
+
+
+
+
+
+
 ];
 
 /* ---------------- COMPONENT ---------------- */

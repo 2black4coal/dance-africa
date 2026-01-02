@@ -13,7 +13,7 @@ export default async function handler(req, res) {
     // ADMIN EMAIL
     await resend.emails.send({
       from: "Dance Africa <inquiries@dance-africa.org>",
-      to: "advertising@dance-africa.org",
+      to: "inquiries@dance-africa.org",   // ✅ FIXED
       subject: "New Advertising Inquiry",
       html: `
         <div style="font-family: Arial, sans-serif; padding: 20px;">

@@ -22,66 +22,86 @@ export default function BackgroundMusic() {
   const [playing, setPlaying] = useState(false);
   const [open, setOpen] = useState(true);
 
-  /* ▶️ AUTOPLAY SAFE START */
-  useEffect(() => {
-    const audio = audioRef.current;
-    if (!audio) return;
+ /* ▶️ UNIFIED AUDIO START (Fixes autoplay + waveform + context) */
+useEffect(() => {
+  const audio = audioRef.current;
+  if (!audio) return;
 
-    const start = async () => {
-      try {
-        audio.volume = 0;
-        await audio.play();
-        fadeIn(audio);
-        setPlaying(true);
-      } catch {}
-      document.removeEventListener("click", start);
-    };
+  let audioCtx;
+  let analyser;
 
-    document.addEventListener("click", start);
-  }, []);
+  const startAudio = async () => {
+    try {
+      // Create AudioContext only once
+      if (!audioCtx) {
+        const Ctx = window.AudioContext || window.webkitAudioContext;
+        audioCtx = new Ctx();
 
-  /* 🌊 AUDIO CONTEXT + WAVEFORM */
-  useEffect(() => {
-    const audio = audioRef.current;
-    const canvas = canvasRef.current;
-    if (!audio || !canvas) return;
+        analyser = audioCtx.createAnalyser();
+        analyser.fftSize = 1024;
 
-    const AudioCtx = window.AudioContext || window.webkitAudioContext;
-    const ctx = new AudioCtx();
-    const analyser = ctx.createAnalyser();
-    analyser.fftSize = 1024;
+        const source = audioCtx.createMediaElementSource(audio);
+        source.connect(analyser);
+        analyser.connect(audioCtx.destination);
 
-    const source = ctx.createMediaElementSource(audio);
-    source.connect(analyser);
-    analyser.connect(ctx.destination);
+        analyserRef.current = analyser;
+        dataRef.current = new Uint8Array(analyser.frequencyBinCount);
 
-    analyserRef.current = analyser;
-    dataRef.current = new Uint8Array(analyser.frequencyBinCount);
-    const c = canvas.getContext("2d");
+        drawWaveform();
+      }
 
-    const draw = () => {
-      requestAnimationFrame(draw);
-      analyser.getByteTimeDomainData(dataRef.current);
+      // Required for Safari/Chrome
+      if (audioCtx.state === "suspended") {
+        await audioCtx.resume();
+      }
 
-      c.clearRect(0, 0, canvas.width, canvas.height);
-      c.lineWidth = 0.6;
-      c.strokeStyle = "rgba(255,255,255,0.6)";
-      c.beginPath();
+      audio.volume = 0;
+      await audio.play();
+      fadeIn(audio);
 
-      let x = 0;
-      const slice = canvas.width / dataRef.current.length;
+      setPlaying(true);
+      document.removeEventListener("click", startAudio);
+    } catch (err) {
+      console.log("Autoplay blocked:", err);
+    }
+  };
 
-      dataRef.current.forEach((v, i) => {
-        const y = (v / 255) * canvas.height;
-        i === 0 ? c.moveTo(x, y) : c.lineTo(x, y);
-        x += slice;
-      });
+  document.addEventListener("click", startAudio);
+}, []);
 
-      c.stroke();
-    };
+/* 🌊 FIXED WAVEFORM DRAW LOOP */
+const drawWaveform = () => {
+  const canvas = canvasRef.current;
+  const analyser = analyserRef.current;
+  if (!canvas || !analyser) return;
 
-    draw();
-  }, []);
+  const ctx = canvas.getContext("2d");
+
+  const draw = () => {
+    requestAnimationFrame(draw);
+
+    analyser.getByteTimeDomainData(dataRef.current);
+
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.lineWidth = 0.6;
+    ctx.strokeStyle = "rgba(255,255,255,0.6)";
+    ctx.beginPath();
+
+    let x = 0;
+    const slice = canvas.width / dataRef.current.length;
+
+    dataRef.current.forEach((v, i) => {
+      const y = (v / 255) * canvas.height;
+      i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+      x += slice;
+    });
+
+    ctx.stroke();
+  };
+
+  draw();
+};
+
 
   /* 🔀 LOAD TRACK */
   useEffect(() => {
