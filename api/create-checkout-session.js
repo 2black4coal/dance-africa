@@ -14,6 +14,7 @@ export default async function handler(req, res) {
       typeof req.body === "string" ? JSON.parse(req.body) : req.body;
 
     const { amount, currency = "usd" } = body;
+console.log("AMOUNT FROM FRONTEND:", amount);
 
     // Amount MUST be dollars (e.g. 25 for $25)
     const dollars = Number(amount);
