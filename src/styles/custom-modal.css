@@ -1,0 +1,145 @@
+/* =========================
+   OVERLAY
+========================= */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(6px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+  z-index: 999;
+}
+
+/* =========================
+   GOLD GLOW ANIMATION
+========================= */
+@keyframes goldPulse {
+  0% { box-shadow: 0 0 12px rgba(250, 204, 21, 0.25); }
+  50% { box-shadow: 0 0 22px rgba(250, 204, 21, 0.45); }
+  100% { box-shadow: 0 0 12px rgba(250, 204, 21, 0.25); }
+}
+
+.gold-glow {
+  animation: goldPulse 2.4s ease-in-out infinite;
+}
+
+/* =========================
+   MODAL CONTAINER
+========================= */
+.modal-container {
+  background: rgba(34, 36, 36, 0.55);
+  border: 1px solid var(--accent);
+  padding: var(--space-md);
+  border-radius: 14px;
+  width: min(90%, 420px);
+  text-align: center;
+  color: var(--text-light);
+  font-family: var(--font-serif);
+  position: relative;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+/* =========================
+   CLOSE BUTTON
+========================= */
+.modal-close {
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  background: none;
+  border: none;
+  color: var(--accent);
+  font-size: 1.8rem;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.modal-close:hover {
+  transform: scale(1.15);
+  color: #ffe680;
+}
+
+/* =========================
+   TITLE
+========================= */
+.modal-title {
+  font-family: var(--font-script);
+  font-size: var(--font-lg);
+  margin-bottom: var(--space-sm);
+  color: var(--accent);
+  font-style: italic;
+}
+
+/* =========================
+   INPUT FIELD
+========================= */
+.modal-input {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--accent);
+  background: rgba(0, 0, 0, 0.35);
+  color: var(--text-light);
+  font-size: var(--font-md);
+  margin-bottom: var(--space-xs);
+  outline: none;
+  text-align: center;
+}
+
+.modal-input:focus {
+  box-shadow: 0 0 14px rgba(250, 204, 21, 0.35);
+}
+
+/* =========================
+   ERROR MESSAGE
+========================= */
+.modal-error {
+  color: #ff6b6b;
+  font-size: var(--font-sm);
+  margin-bottom: var(--space-sm);
+  font-style: italic;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* =========================
+   SUBMIT BUTTON
+========================= */
+.modal-submit {
+  width: 100%;
+  padding: 0.85rem;
+  background: var(--accent);
+  color: #000;
+  border: none;
+  border-radius: 8px;
+  font-size: var(--font-md);
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.modal-submit:hover {
+  background: #ffe680;
+}
+
+/* =========================
+   MOBILE FIXES
+========================= */
+@media (max-width: 600px) {
+  .modal-overlay {
+    align-items: flex-start;
+    padding-top: 15vh;
+  }
+
+  .modal-container {
+    width: 92%;
+  }
+}

@@ -1,9 +1,9 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import BackgroundMusic from "./components/BackgroundMusic";
+
 import DonationSuccess from "./pages/DonationSuccess";
 import DonationCancel from "./pages/DonationCancel";
-
 
 import Home from "./pages/Home";
 import DanceStyles from "./pages/DanceStyles";
@@ -14,14 +14,15 @@ import Support from "./pages/Support";
 import Advertise from "./pages/Advertise";
 import Donate from "./pages/Donate";
 
-export default function App() {
+function AppContent() {
+  const location = useLocation();
+
   return (
-    <BrowserRouter>
-      {/* Keep your existing Navbar intact */}
-     {location.pathname !== "/gallery" && <Navbar />}
+    <>
+      {/* Hide global navbar ONLY on gallery */}
+      {location.pathname !== "/gallery" && <Navbar />}
 
-
-      {/* Lower-left corner music UI only */}
+      {/* Lower-left corner music UI */}
       <BackgroundMusic />
 
       <Routes>
@@ -36,6 +37,14 @@ export default function App() {
         <Route path="/donation-success" element={<DonationSuccess />} />
         <Route path="/donation-cancel" element={<DonationCancel />} />
       </Routes>
+    </>
+  );
+}
+
+export default function App() {
+  return (
+    <BrowserRouter>
+      <AppContent />
     </BrowserRouter>
   );
 }
