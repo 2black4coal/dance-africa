@@ -99,21 +99,7 @@ export default function Home() {
         <div className="home-content">
 
           {/* Africa Map */}
-          <motion.img
-            src="/images/uzairue.png"
-            alt="Uzairue Map"
-            className="home-map"
-            initial={{ scale: 0.6, opacity: 0 }}
-            animate={{ scale: 1.15, opacity: 1 }}
-            transition={{
-              duration: 4,
-              ease: [0.16, 1, 0.3, 1],
-            }}
-            whileHover={{
-              scale: 1.22,
-              transition: { duration: 0.6, ease: "easeOut" },
-            }}
-          />
+          
 
           {/* TITLE */}
           <motion.p
