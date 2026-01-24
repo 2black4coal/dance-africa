@@ -6,7 +6,7 @@
 .home-page {
   min-height: 100vh;
   width: 100%;
-  background: url("/images/home/phil.jpg") center 60% / cover no-repeat;
+  background: url("/images/home/philip.png") center 72% / cover no-repeat;
   color: #facc15;
   font-family: 'Dancing Script', 'Allura', cursive;
 
@@ -29,7 +29,9 @@
   text-align: center;
   max-width: 800px;
   margin: 0 auto;
+  padding-bottom: 3.5rem; /* ⭐ ensures author never clips */
 }
+
 
 /* =========================
    AFRICA MAP — balanced + elegant
@@ -128,7 +130,7 @@
   margin-top: 0.6rem;
   text-align: right;
   font-size: clamp(0.75rem, 1.8vw, 0.95rem);
-  color: #fde68a;
+  color: black;
   opacity: 0.85;
   font-style: italic;
 }

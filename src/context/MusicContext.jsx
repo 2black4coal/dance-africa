@@ -6,6 +6,7 @@ const MusicContext = createContext();
 const TRACKS = [
   "/sound/african-drums-209632.mp3",
   "/sound/kora-melody.mp3",
+  "/sound/testify-thank-you-jesus.mp3",
   "/sound/tribal-chant.mp3",
   "/sound/balafon-groove.mp3",
 ];

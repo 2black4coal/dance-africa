@@ -2,7 +2,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 import "../styles/home.css";
 
-const DISPLAY_TIME = 6000; // ⏱ adjustable (milliseconds)
+const DISPLAY_TIME = 9000; // ⏱ adjustable (milliseconds)
 
 const tributes = [
   {
