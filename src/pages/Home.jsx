@@ -2,7 +2,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 import "../styles/home.css";
 
-const DISPLAY_TIME = 9000; // ⏱ adjustable (milliseconds)
+const DISPLAY_TIME = 13000; // ⏱ adjustable (milliseconds)
 
 const tributes = [
   {
@@ -23,15 +23,20 @@ const tributes = [
   },
   {
     text: "Mr. Iluonokhalumhe’s support for education through scholarships has opened doors for countless young minds, giving hope where there was once limitation.",
-    author: "Etsako Elders & Chiefs",
+    author: "Etsako Chiefs & Elders",
   },
   {
     text: "His contributions of food items and essentials have reached families in need, reminding us that compassion is the highest form of leadership.",
     author: "Alfred Imomoh",
   },
   {
+  text: "As his nephew, I have watched with pride as his generosity and kindness reached families in need. Through his gifts of food and essential supplies, he showed me that true leadership is rooted in compassion and selfless service.",
+  author: "Felix Iluonokhalumhe",
+},
+
+  {
     text: "You are the best father to every Irekpai son and daughter — a mentor whose example shapes the values of our youth.",
-    author: "Meg,Lenny,Clerance  & Bond Iluonokhalumhe ",
+    author: "Meg,Lenny,Clerance & Bond Iluonokhalumhe ",
   },
   {
     text: "Words cannot fully express our gratitude for your love and care. Your presence in our community is a gift, and your dedication is a lesson in humility and strength.",
@@ -55,7 +60,7 @@ const tributes = [
   },
    {
     text: "Mr. Phillips, your life of quiet service, generosity, and faith reflects true Christian love. May God bless you richly as you celebrate your birthday, and may your good works continue to inspire our community.",
-    author: "Rev Father Corlinus Omonokhua",
+    author: "Rev. Fr. Corlinus Omonokhua",
   },
 ];
 
@@ -142,7 +147,7 @@ export default function Home() {
               transition: { duration: 0.45, ease: "easeOut" },
             }}
           >
-            A Tribute on Your Birthday.
+            Tributes on Your Birthday.
           </motion.p>
 
           {/* ✨ TRIBUTE PARAGRAPH */}
