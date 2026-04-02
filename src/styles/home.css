@@ -6,7 +6,7 @@
 .home-page {
   min-height: 100vh;
   width: 100%;
-  background: url("/images/home/philip.png") center 40% / cover no-repeat;
+  background: url("/images/home/homeland.png") center 60% / cover no-repeat;
   color: #facc15;
   font-family: 'Dancing Script', 'Allura', cursive;
 
@@ -29,9 +29,7 @@
   text-align: center;
   max-width: 800px;
   margin: 0 auto;
-  padding-bottom: 3.5rem; /* ⭐ ensures author never clips */
 }
-
 
 /* =========================
    AFRICA MAP — balanced + elegant
@@ -39,11 +37,8 @@
 .home-map {
   display: block;
   margin: 0 auto 1.2rem; /* ⭐ no top margin */
-
-  max-width: clamp(320px, 55vw, 720px);   /* ⬅ wider */
-  max-height: clamp(220px, 38vh, 420px);  /* ⬅ taller */
-
-
+  max-width: clamp(260px, 48vw, 620px);
+  max-height: clamp(180px, 32vh, 360px); /* ⭐ reduced height */
   object-fit: contain;
   transition: transform 0.6s ease;
 }
@@ -71,7 +66,7 @@
 .home-subtitle {
   margin-top: 0.4rem;
   font-size: clamp(1.1rem, 2.6vw, 1.7rem);
-  color: #332f08;
+  color: #fef9c3;
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
@@ -96,57 +91,5 @@
 
   .home-title {
     margin-top: -0.2rem;
-  }
-}
-
-
-
-/* =========================
-   TRIBUTE PARAGRAPH
-========================= */
-
-.tribute-wrapper {
-  margin-top: 2.2rem;
-  min-height: 160px; /* prevents layout jump */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.tribute-box {
-  position: relative;
-  max-width: 680px;
-  padding: 0 1rem;
-}
-
-/* =========================
-   TRIBUTE PARAGRAPH — FONT OVERRIDE
-========================= */
-
-.tribute-text {
-  font-family: 'Playfair Display', serif; /* 👈 change font here */
-  font-size: clamp(1.1rem, 2.6vw, 1.6rem);
-  line-height: 1.7;
-  color: #110e03;
-  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.55);
-}
-
-.tribute-author {
-  font-family: 'Playfair Display', serif; /* or keep italic */
-  font-size: clamp(0.75rem, 1.8vw, 0.95rem);
-  font-style: italic;
-  text-align: right;
-   color: rgb(36, 20, 20);
-}
-
-
-/* MOBILE REFINEMENT */
-@media (max-width: 600px) {
-  .tribute-wrapper {
-    margin-top: 1.6rem;
-  }
-
-  .tribute-text {
-    line-height: 1.6;
   }
 }
