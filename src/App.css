@@ -1,0 +1,8 @@
+/* 🔒 GLOBAL ANTI‑WOBBLE + ANTI‑SLIDE + ANTI‑BOUNCE */
+html, body {
+  overflow-x: hidden !important;        /* stops sideways movement */
+  overscroll-behavior: none !important; /* stops top/bottom bounce */
+  position: fixed !important;           /* locks the page in place */
+  width: 100% !important;
+  height: 100% !important;
+}

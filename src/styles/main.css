@@ -271,7 +271,18 @@ body {
 /* =========================
    GLOBAL PARAGRAPH OVERRIDE — FINAL AUTHORITY
 ========================= */
-:root .card-body p {
-  font-size: clamp(1rem, 2vw, 1.25rem) !important; /* ⭐ bigger + responsive */
-  line-height: 1.55 !important;
+
+
+/* 🔒 SOFT GLOBAL STABILITY — FIXED */
+html, body {
+  overflow-x: hidden;     /* keep this */
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Allow vertical scroll normally */
+body {
+  overflow-y: auto;
+  overscroll-behavior-y: auto;
 }

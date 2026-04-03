@@ -208,6 +208,14 @@ const danceStyles = [
     "A royal drum dance performed to honor chiefs and elders. It features powerful drum rhythms and disciplined group movements.",
   image:    "/images/dancestyles/Amagunju.jpg",
 },
+{
+  name: "Moutya",
+  origin: "Seychelles",
+  description:
+    "A traditional Seychellois drum dance born among enslaved Africans. Performed around a fire at night, it features deep, hypnotic drum rhythms, call-and-response singing, and slow, sensual movements that build in intensity.",
+  image: "/images/dancestyles/Moutya.jpg",
+},
+
 { 
   name: "Mchiriku",
   origin: "Swahili Coast, Tanzania",

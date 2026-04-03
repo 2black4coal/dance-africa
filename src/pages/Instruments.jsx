@@ -102,7 +102,21 @@ const data = [
   rootDescription:
     "Yohimbe root is associated with vitality, strength, and ceremonial empowerment.",
   rootImage: "/images/roots/yohimbe.jpg",
+},
+{
+  id: 10,
+  name: "Moutya Drum",
+  created: "18th Century",
+  description:
+    "The traditional Seychellois drum used in Moutya performances. Made from hollowed wood and goatskin, it is heated over a fire to tighten the skin and produce deep, resonant rhythms central to Creole culture.",
+  instrumentImage: "/images/instruments/moutya-drum.jpg",
+  rootName: "Bwa Zoli",
+  rootDescription:
+    "A traditional Seychellois medicinal plant associated with cleansing, protection, and ancestral healing in Creole practices.",
+  rootImage: "/images/roots/bwazoli.jpg",
 }
+
+
 
 
 

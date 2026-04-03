@@ -248,4 +248,20 @@ const events = [
       "Chicken cooked in rich palm nut sauce, commonly served during ceremonial gatherings.",
     foodImage: "/images/food/Poulet Nyembwe.jpg",
   },
+
+  {
+  id: 1,
+  eventName: "Seychelles Nature Trail (SNT)",
+  date: "May 16, 2026",
+  location: "Mahé, Seychelles",
+  eventDescription:
+    "A national trail‑running event guiding participants through biodiversity parks, lush forests, and coastal paths, celebrating Seychelles’ natural heritage.",
+  eventImage: "/images/event/Seychelles Nature Trail.jpg",
+  foodName: "Rougaille",
+  foodRegion: "Seychelles",
+  foodDescription:
+    "A hearty Creole tomato-based stew often prepared with sausages, fish, or chicken, reflecting French influence and Seychellois home-style cooking.",
+  foodImage: "/images/food/Rougaille.jpg",
+},
+
 ];
