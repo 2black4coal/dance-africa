@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-
 import BrandCarousel from "../components/BrandCarousel";
+
 import "../styles/main.css";
 import "../styles/advertise.css";
 
@@ -29,7 +29,6 @@ export default function Advertise() {
       message: e.target.message.value.trim(),
     };
 
-    // Basic validation
     if (!formData.name || !formData.email || !formData.message) {
       setStatus("error");
       return;
@@ -54,7 +53,7 @@ export default function Advertise() {
 
       <h1 className="page-title">Partner With the Pulse of Africa</h1>
       <p className="page-subtitle">
-        Showcase your brand to a vibrant, global audience passionate about African culture, music, dance, and heritage.
+        Showcase your brand to a global audience passionate about African culture, dance, music, and heritage.
       </p>
 
       <motion.div
@@ -62,46 +61,36 @@ export default function Advertise() {
         variants={containerVariants}
         initial="hidden"
         animate="show"
-        style={{ transformOrigin: "center bottom", willChange: "transform, opacity" }}
       >
+        {/* Opportunities */}
         <div className="ad-card">
-          <h2>Why Advertise With Us?</h2>
+          <h2>Why Advertise With Us</h2>
           <p>
-            Dance Africa reaches thousands of engaged users every month across
-            the diaspora. Our audience is culturally connected, trend-savvy, and
-            passionate about African identity, music, dance, and fashion.
+            Dance Africa connects a culturally engaged global audience across Africa
+            and the diaspora. Our platform blends movement, storytelling, and identity
+            — making your brand part of something meaningful.
           </p>
         </div>
 
         <div className="ad-card">
-          <h2>Ad Opportunities</h2>
+          <h2>Opportunities</h2>
           <ul>
-            <li>🎯 Homepage banners & featured placements</li>
-            <li>📢 Sponsored content & product showcases</li>
-            <li>🎥 Video ads during cultural event coverage</li>
-            <li>📩 Newsletter & email promotions</li>
-            <li>🤝 Brand collaborations & influencer campaigns</li>
+            <li>Homepage placements</li>
+            <li>Sponsored features</li>
+            <li>Video integrations</li>
+            <li>Event partnerships</li>
+            <li>Brand collaborations</li>
           </ul>
         </div>
 
-        <div className="ad-card">
-          <h2>Audience Insights</h2>
-          <p>
-            Our community connects people across Africa and the global diaspora — 
-            from the U.S. to Europe and the Caribbean. Visitors come from every 
-            generation, united by a shared love for African dance, music, food, 
-            fashion, and cultural heritage.
-          </p>
-        </div>
-
+        {/* Contact Section */}
         <div className="ad-card highlight-card">
-          <h2>Let’s Work Together</h2>
-          <p>
-            Ready to amplify your brand? Partner with us to reach a vibrant global 
-            community and create meaningful, culturally powerful campaigns that 
-            inspire and leave a lasting impact.
-          </p>
-
+          <h2>Contact & Inquiries</h2>
+          <p>For partnerships, advertising, or collaborations:</p>
+          <div className="contact-block">
+            <p><strong>Email:</strong> your@email.com</p>
+            <p><strong>Phone:</strong> +1 (000) 000-0000</p>
+          </div>
           <a
             href="/media/media-kit.pdf"
             className="cta-button"
@@ -115,44 +104,33 @@ export default function Advertise() {
 
       <BrandCarousel />
 
-      {/* INQUIRY FORM */}
+      {/* Inquiry Form */}
       <div className="inquiry-form">
         <h2>Start Your Campaign</h2>
-
         <form onSubmit={handleSubmit} className="advertise-form">
-
           <input type="text" name="name" placeholder="Your Name" required />
           <input type="email" name="email" placeholder="Your Email" required />
-          <input type="text" name="company" placeholder="Company Name" />
+          <input type="text" name="company" placeholder="Company (optional)" />
           <textarea name="message" placeholder="Tell us about your campaign..." required />
-
           <button type="submit" className="cta-button">
             {status === "sending" ? "Sending..." : "Send Inquiry"}
           </button>
 
-          {/* SUCCESS MESSAGE */}
           {status === "success" && (
-            <motion.p
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="success-message"
-            >
-              Your inquiry has been sent!
+            <motion.p className="success-message">
+              Message sent successfully.
             </motion.p>
           )}
 
-          {/* ERROR MESSAGE */}
           {status === "error" && (
-            <motion.p
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="error-message"
-            >
-              Something went wrong. Please try again.
+            <motion.p className="error-message">
+              Something went wrong.
             </motion.p>
           )}
         </form>
       </div>
+
+    
     </section>
   );
 }

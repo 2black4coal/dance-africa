@@ -2,9 +2,10 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import BackgroundMusic from "./components/BackgroundMusic";
 
+
 import DonationSuccess from "./pages/DonationSuccess";
 import DonationCancel from "./pages/DonationCancel";
-
+import About from "./pages/About";
 import Home from "./pages/Home";
 import DanceStyles from "./pages/DanceStyles";
 import Gallery from "./pages/Gallery";
@@ -13,7 +14,7 @@ import Events from "./pages/Events";
 import Support from "./pages/Support";
 import Advertise from "./pages/Advertise";
 import Donate from "./pages/Donate";
-
+import Footer from "./components/footer"; // correct if Footer.jsx is inside components
 function AppContent() {
   const location = useLocation();
 
@@ -27,6 +28,7 @@ function AppContent() {
 
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
         <Route path="/dance-styles" element={<DanceStyles />} />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/instruments" element={<Instruments />} />
@@ -36,7 +38,9 @@ function AppContent() {
         <Route path="/donate" element={<Donate />} />
         <Route path="/donation-success" element={<DonationSuccess />} />
         <Route path="/donation-cancel" element={<DonationCancel />} />
+
       </Routes>
+      <Footer />
     </>
   );
 }
@@ -47,4 +51,5 @@ export default function App() {
       <AppContent />
     </BrowserRouter>
   );
+
 }

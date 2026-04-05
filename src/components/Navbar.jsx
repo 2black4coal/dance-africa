@@ -7,6 +7,7 @@ export default function Navbar() {
     <nav className="navbar">
       <div className="site-nav">
         <NavLink to="/" className="nav-link">Home</NavLink>
+        <NavLink to="/about" className="nav-link">About</NavLink>
         <NavLink to="/dance-styles" className="nav-link">Dance Styles</NavLink>
         <NavLink to="/instruments" className="nav-link">Instruments</NavLink>
         <NavLink to="/gallery" className="nav-link">Gallery</NavLink>

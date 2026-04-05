@@ -5,8 +5,11 @@ import "./styles/main.css";
 import { MusicProvider } from "./context/MusicProvider";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
- <MusicProvider>
-  <App />
-</MusicProvider>
-
+ 
+  
+      <MusicProvider>
+        <App />
+      </MusicProvider>
+   
+  
 );
