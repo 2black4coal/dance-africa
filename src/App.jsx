@@ -3,6 +3,10 @@ import Navbar from "./components/Navbar";
 import BackgroundMusic from "./components/BackgroundMusic";
 
 
+import Privacy from "./pages/Privacy";
+import Terms from "./pages/Terms";
+
+
 import DonationSuccess from "./pages/DonationSuccess";
 import DonationCancel from "./pages/DonationCancel";
 import About from "./pages/About";
@@ -38,6 +42,10 @@ function AppContent() {
         <Route path="/donate" element={<Donate />} />
         <Route path="/donation-success" element={<DonationSuccess />} />
         <Route path="/donation-cancel" element={<DonationCancel />} />
+
+
+        <Route path="/privacy-policy" element={<Privacy />} />
+<Route path="/terms" element={<Terms />} />
 
       </Routes>
       <Footer />

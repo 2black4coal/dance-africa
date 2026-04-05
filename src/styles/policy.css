@@ -1,0 +1,86 @@
+/* CONTAINER */
+.policy-page {
+  width: 100%;
+  min-height: 100vh;
+  padding: 80px 16px;
+  display: flex;
+  justify-content: center;
+  color: #ffffff;
+}
+
+/* INNER GLASS CARD */
+.policy-container {
+  width: 100%;
+  max-width: 900px;
+  backdrop-filter: blur(14px);
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 20px;
+  padding: 28px 20px;
+  line-height: 1.7;
+}
+
+/* HEADINGS */
+.policy-container h1 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.policy-container h2 {
+  font-size: 1.1rem;
+  margin-top: 20px;
+  margin-bottom: 8px;
+  font-weight: 400;
+  opacity: 0.9;
+}
+
+/* TEXT */
+.policy-container p {
+  font-size: 0.9rem;
+  opacity: 0.75;
+}
+
+/* LINKS (if any inside text) */
+.policy-container a {
+  color: #ffffff;
+  text-decoration: underline;
+  opacity: 0.8;
+}
+
+.policy-container a:hover {
+  opacity: 1;
+}
+
+/* MOBILE FIRST → already optimized */
+
+/* TABLET */
+@media (min-width: 768px) {
+  .policy-container {
+    padding: 40px;
+  }
+
+  .policy-container h1 {
+    font-size: 2.4rem;
+  }
+
+  .policy-container h2 {
+    font-size: 1.3rem;
+  }
+
+  .policy-container p {
+    font-size: 1rem;
+  }
+}
+
+/* DESKTOP */
+@media (min-width: 1024px) {
+  .policy-container {
+    padding: 50px;
+  }
+
+  .policy-container h1 {
+    font-size: 2.8rem;
+  }
+}
