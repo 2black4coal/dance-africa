@@ -1,70 +1,112 @@
+/* =========================
+   ABOUT PAGE — SIGNATURE CLEAN
+========================= */
 .about-container {
   width: 100%;
   min-height: 100vh;
-  padding: 100px 20px;
+  background: var(--page-bg);
+  color: var(--text-light);
+  font-family: var(--font-serif);
+  padding: clamp(110px, 12vw, 140px) clamp(1.5rem, 3vw, 2rem) 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 80px;
-  color: #ffffff;
+  gap: clamp(2rem, 4vw, 2.8rem);
 }
 
-/* HERO */
+/* =========================
+   HERO
+========================= */
 .about-hero {
-  text-align: center;
   max-width: 900px;
+  text-align: center;
 }
 
 .about-hero h1 {
-  font-size: 3rem;
-  font-weight: 500;
-  letter-spacing: 2px;
-  margin-bottom: 20px;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(1.8rem, 5vw, 2.4rem);
+  color: var(--text-light);
+  margin: 0;
+  transition: transform 0.35s ease;
+}
+
+/* match DanceStyles + Advertise */
+.about-hero h1:hover {
+  transform: scale(1.03);
 }
 
 .about-hero p {
-  font-size: 1.1rem;
-  opacity: 0.7;
+  font-family: var(--font-serif);
+  font-size: clamp(0.95rem, 2.5vw, 1.05rem);
+  color: #cfcfcf;
+  line-height: 1.6;
+  margin-top: 0.5rem;
 }
 
-/* SECTIONS */
+/* =========================
+   SECTIONS
+========================= */
 .about-section {
-  max-width: 800px;
+  max-width: 900px;
   text-align: center;
-  line-height: 1.8;
+  line-height: 1.65;
 }
 
 .about-section h2 {
-  font-size: 1.8rem;
-  margin-bottom: 20px;
-  font-weight: 400;
-  letter-spacing: 1px;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
+  color: var(--text-light);
+  margin-bottom: 0.4rem;
+  transition: transform 0.35s ease;
+}
+
+/* subtle scale only */
+.about-section h2:hover {
+  transform: scale(1.03);
 }
 
 .about-section p {
-  opacity: 0.75;
-  font-size: 1rem;
+  font-family: var(--font-serif);
+  font-size: clamp(0.9rem, 2.3vw, 1rem);
+  color: #cfcfcf;
 }
 
-/* HIGHLIGHT (MISSION) */
+/* =========================
+   HIGHLIGHT
+========================= */
 .highlight {
-  backdrop-filter: blur(12px);
-  background: rgba(255, 255, 255, 0.03);
-  padding: 40px;
-  border-radius: 20px;
+  margin-top: clamp(2rem, 4vw, 2.5rem);
+  padding-left: 12px;
+  border-left: 3px solid var(--accent);
+  background: none;
+  font-family: var(--font-serif);
 }
 
-/* LINK */
+/* =========================
+   LINK
+========================= */
 .about-link {
   display: inline-block;
-  margin-top: 20px;
+  margin-top: 0.75rem;
+  color: var(--accent);
   text-decoration: none;
-  color: #ffffff;
-  opacity: 0.8;
-  transition: all 0.3s ease;
+  font-size: clamp(0.9rem, 2.2vw, 1rem);
+  font-family: var(--font-serif);
+  transition: transform 0.25s ease;
 }
 
 .about-link:hover {
-  opacity: 1;
   transform: translateY(-2px);
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media (max-width: 600px) {
+  .about-container {
+    padding: 110px 1.2rem 2rem;
+    gap: 2rem;
+  }
 }

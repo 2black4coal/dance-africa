@@ -1,37 +1,131 @@
 /* =========================
-   FIX UNEVEN HEIGHTS WHILE KEEPING MAIN CARD BIGGER
+   PAGE WRAPPER
 ========================= */
-
-/* Make both cards stretch vertically */
-.row {
-  align-items: stretch;
+.instruments-page {
+  min-height: 100vh;
+  background: var(--page-bg);
+  color: var(--text-light);
+  padding-left: clamp(0.75rem, 2.5vw, 1.25rem);
+  padding-right: clamp(0.75rem, 2.5vw, 1.25rem);
 }
 
-/* Ensure both cards behave like vertical flex containers */
+/* =========================
+   TITLES
+========================= */
+.instruments-page .page-title,
+.instruments-page .page-subtitle {
+  text-align: center;
+  transition: transform 0.35s ease;
+}
+
+.instruments-page .page-title:hover,
+.instruments-page .page-subtitle:hover {
+  transform: scale(1.03);
+}
+
+/* =========================
+   ROWS — MOBILE FIRST
+========================= */
+.rows {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Desktop alternating layout */
+@media (min-width: 768px) {
+  .row {
+    flex-direction: row;
+  }
+  .row.reverse {
+    flex-direction: row-reverse;
+  }
+}
+
+/* =========================
+   CARDS — FLUSH, SQUARE, GOLD OUTLINE ON HOVER
+========================= */
 .africa-card,
 .africa-subcard {
-  display: flex;
-  flex-direction: column;
+  background: none !important;       /* remove any background */
+  border: 1px solid transparent !important; /* invisible by default */
+  border-radius: 0 !important;       /* square edges */
+  overflow: visible;
+  display: block;
+  margin: 0 !important;              
+  padding: 0 !important;             
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
-/* Prevent images from shrinking */
+.africa-card:hover,
+.africa-subcard:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent) !important; /* gold outline on hover */
+  box-shadow: 0 6px 18px rgba(250, 204, 21, 0.25); 
+}
+
+/* =========================
+   IMAGE — TALLER, SQUARE
+========================= */
 .africa-card .image-container,
 .africa-subcard .image-container {
-  flex-shrink: 0;
+  width: 100%;
+  margin: 0 !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
 }
 
-/* Let card-body fill remaining height */
-.africa-card .card-body,
-.africa-subcard .card-body {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
+.africa-card .image-container img,
+.africa-subcard .image-container img {
+  width: 100%;
+  height: clamp(320px, 48vw, 420px);  /* taller images */
+  object-fit: cover;
+  display: block;
+  border-radius: 0 !important;        /* square edges */
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
-/* Narrow, tiny, elegant typography */
+.africa-card:hover img,
+.africa-subcard:hover img {
+  transform: scale(1.04);
+}
+
+/* =========================
+   CARD BODY — DIRECTLY ON PAGE, FLUSH
+========================= */
 .africa-card .card-body,
 .africa-subcard .card-body {
+  background: none !important;       /* no underlay */
+  margin: 0 !important;              /* flush to page */
+  padding: 0.5rem 0 !important;      /* minimal spacing */
+  border-radius: 0 !important;       /* square edges */
+  text-align: left;                   
   font-family: "Cormorant Garamond", serif;
-  font-size: clamp(0.85rem, 1.8vw, 1rem);
+  font-size: clamp(0.9rem, 1.8vw, 1rem);
   line-height: 1.45;
+}
+
+.africa-card .card-body h2,
+.africa-subcard .card-body h3 {
+  font-style: italic;
+  font-size: clamp(1.2rem, 2.6vw, 1.4rem);
+  margin: 0.25rem 0;
+}
+
+.africa-card .card-body .date {
+  font-size: 0.75rem;
+  color: var(--text-faint);
+  margin-bottom: 0.25rem;
+}
+
+.africa-card .card-body p,
+.africa-subcard .card-body p {
+  color: var(--text-muted);
+  margin-top: 0;
 }

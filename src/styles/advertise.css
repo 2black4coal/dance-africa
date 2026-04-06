@@ -1,11 +1,27 @@
 /* =========================
-   ADVERTISE PAGE — UNIFIED
+   ADVERTISE PAGE — SIGNATURE CLEAN
 ========================= */
 .advertise-page {
   min-height: 100vh;
-  background: #0a0a0a;
-  color: #fff;
-  font-family: "Cormorant Garamond", serif;
+  background: var(--page-bg);
+  color: var(--text-light);
+  font-family: var(--font-serif);
+  padding-left: clamp(1rem, 3vw, 2rem);
+  padding-right: clamp(1rem, 3vw, 2rem);
+}
+
+/* =========================
+   TITLES — MATCH DanceStyles
+========================= */
+.advertise-page .page-title,
+.advertise-page .page-subtitle {
+  text-align: center;
+  transition: transform 0.35s ease;
+}
+
+.advertise-page .page-title:hover,
+.advertise-page .page-subtitle:hover {
+  transform: scale(1.03);
 }
 
 /* =========================
@@ -21,38 +37,49 @@
 }
 
 /* =========================
-   AD CARDS — UNIFIED STYLE
+   AD CARDS — FRAMELESS + GOLD HOVER
 ========================= */
 .ad-card {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid #222;
-  border-radius: 16px;
+  background: none;                 /* remove layer */
+  border: 1px solid transparent;    /* invisible */
+  border-radius: 0;                 /* square edges */
   padding: clamp(1.5rem, 3vw, 2rem);
-  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+  transition: border-color 0.35s ease, transform 0.35s ease;
 }
 
 .ad-card:hover {
+  border-color: var(--accent);      /* gold outline */
   transform: translateY(-4px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
-  border-color: #facc15;
 }
 
-/* Card Titles — match Instruments page */
+/* Card Titles — elegant */
 .ad-card h2 {
-  font-family: "Cormorant Garamond", serif;
+  font-family: var(--font-script);
+  font-size: clamp(1.6rem, 2.6vw, 2rem);
+  font-weight: 500;
   font-style: italic;
-  font-size: clamp(1.4rem, 2vw, 1.7rem);
-  color: #facc15;
+  letter-spacing: 0.03em;
+  color: var(--accent);
   margin-bottom: 0.8rem;
+  text-shadow: 0 2px 8px rgba(250, 204, 21, 0.18);
+  transition: transform 0.35s ease, text-shadow 0.35s ease;
 }
 
-/* Card Body — match Instruments page */
+.ad-card:hover h2 {
+  transform: translateY(-2px);
+  text-shadow: 0 3px 12px rgba(250, 204, 21, 0.28);
+}
+
+/* Card Body — clean, no layer */
 .ad-card p,
 .ad-card li {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-size: clamp(0.85rem, 1.6vw, 1rem);
+  font-family: var(--font-body);
+  font-size: var(--font-sm);
   line-height: 1.55;
-  color: #ccc;
+  color: var(--text-muted);
+  font-style: italic;
+  opacity: 0.95;
+  letter-spacing: 0.01em;
 }
 
 /* Bullet list */
@@ -63,26 +90,31 @@
 
 .ad-card ul li::before {
   content: "•";
-  color: #facc15;
+  color: var(--accent);
   margin-right: 0.5rem;
 }
 
-/* Highlight Card */
+/* =========================
+   HIGHLIGHT CARD — STILL FRAMELESS
+========================= */
 .highlight-card {
-  background: #1a1a1a;
-  border: 1px solid #facc15;
+  background: none;
+  border: 1px solid var(--accent);
   text-align: center;
+  border-radius: 0;
 }
 
-/* CTA Button */
+/* =========================
+   CTA BUTTON
+========================= */
 .cta-button {
   display: inline-block;
   margin-top: 1.2rem;
   padding: 0.75rem 1.5rem;
-  background: #facc15;
+  background: var(--accent);
   color: #000;
   font-weight: bold;
-  border-radius: 8px;
+  border-radius: 6px;
   text-decoration: none;
   transition: background 0.3s ease;
 }
@@ -100,14 +132,13 @@
 }
 
 .brand-carousel h2 {
-  font-family: "Cormorant Garamond", serif;
+  font-family: var(--font-serif);
   font-style: italic;
   font-size: clamp(1.4rem, 2vw, 1.8rem);
-  color: #facc15;
+  color: var(--accent);
   margin-bottom: 1.5rem;
 }
 
-/* AUTO-SCROLL FLOATING CAROUSEL */
 .carousel-track {
   display: flex;
   gap: clamp(1.5rem, 3vw, 3rem);
@@ -125,8 +156,8 @@
   flex: 0 0 auto;
   width: 120px;
   height: 60px;
-  background: #111;
-  border-radius: 8px;
+  background: none;                /* remove block */
+  border-radius: 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -145,18 +176,18 @@
 }
 
 /* =========================
-   INQUIRY FORM
+   INQUIRY FORM — FRAMELESS
 ========================= */
 .inquiry-form {
-  max-width: 600px; /* KEEP ORIGINAL SIZE */
+  max-width: 600px;
   margin: clamp(3rem, 6vw, 5rem) auto;
   text-align: center;
 }
 
 .inquiry-form h2 {
-  font-family: "Cormorant Garamond", serif;
+  font-family: var(--font-serif);
   font-style: italic;
-  color: #facc15;
+  color: var(--accent);
   margin-bottom: 1rem;
 }
 
@@ -165,36 +196,30 @@
   flex-direction: column;
   gap: 1rem;
 
-  /* GOLD BORDER ANIMATION */
-  border: 1px solid #444;
+  border: 1px solid transparent;   /* invisible */
   padding: 1.5rem;
-  border-radius: 12px;
-  animation: goldBorderPulse 4s ease-in-out infinite;
+  border-radius: 0;
+  transition: border-color 0.35s ease;
 }
 
-@keyframes goldBorderPulse {
-  0% { border-color: #444; }
-  50% { border-color: rgba(250, 204, 21, 0.6); }
-  100% { border-color: #444; }
+.inquiry-form form:hover {
+  border-color: var(--accent);     /* gold outline */
 }
 
 .inquiry-form input,
 .inquiry-form textarea {
   padding: 0.75rem;
-  border-radius: 8px;
-  border: 1px solid #444;
-  background: #111;
-  color: #fff;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-
-  /* GLOW ON FOCUS */
-  transition: border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  border-radius: 0;
+  border: 1px solid #333;
+  background: none;
+  color: var(--text-light);
+  font-family: var(--font-body);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .inquiry-form input:focus,
 .inquiry-form textarea:focus {
   border-color: var(--accent);
-  background: #1a1a1a;
   box-shadow: 0 0 12px rgba(250, 204, 21, 0.35);
   outline: none;
 }
@@ -205,7 +230,7 @@
 }
 
 /* =========================
-   FLOATING SUCCESS / ERROR TOAST
+   TOASTS
 ========================= */
 .toast-success,
 .toast-error {
@@ -213,7 +238,7 @@
   bottom: 24px;
   right: 24px;
   padding: 1rem 1.4rem;
-  border-radius: 10px;
+  border-radius: 6px;
   font-size: var(--font-sm);
   font-weight: 600;
   z-index: 9999;
@@ -233,57 +258,4 @@
 @keyframes toastFade {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
-}
-.ad-card h2 {
-  font-family: var(--font-script); /* Dancing Script — curvy + elegant */
-  font-size: clamp(1.6rem, 2.6vw, 2rem);
-  font-weight: 500;
-  font-style: italic;
-  letter-spacing: 0.03em;
-  color: var(--accent);
-  margin-bottom: 0.8rem;
-
-  /* subtle ceremonial glow */
-  text-shadow: 0 2px 8px rgba(250, 204, 21, 0.18);
-
-  /* smooth hover lift */
-  transition: transform 0.35s ease, text-shadow 0.35s ease;
-}
-
-.ad-card:hover h2 {
-  transform: translateY(-2px);
-  text-shadow: 0 3px 12px rgba(250, 204, 21, 0.28);
-}
-.ad-card p,
-.ad-card li {
-  font-family: var(--font-body);
-  font-size: var(--font-sm);
-  line-height: 1.55;
-  color: var(--text-muted);
-
-  /* very slight curvature */
-  font-style: italic;
-  opacity: 0.95;
-  letter-spacing: 0.01em;
-}
-
-.ad-card ul {
-  padding-left: 1rem;
-  list-style: none;
-}
-.ad-card ul li::before {
-  content: "•";
-  color: var(--accent);
-  margin-right: 0.5rem;
-}
-/* =========================
-/* =========================
-   PROJECT LIGHT SECTION
-========================= */
-.project-light {
-  margin-top: clamp(2rem, 4vw, 2.5rem);
-  padding: clamp(1.2rem, 3vw, 1.75rem);
-  border-left: 3px solid var(--accent);
-  background: rgba(0, 0, 0, 0.35);
-  border-radius: 12px;
 }

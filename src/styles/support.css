@@ -8,25 +8,27 @@
   font-family: "Cormorant Garamond", serif;
 }
 
-/* Main container */
+/* =========================
+   MAIN CONTAINER — NO LAYER (FLUSH)
+========================= */
 .support-container {
   max-width: 900px;
   margin: 0 auto;
-  background: rgba(34, 36, 36, 0.45);
-  border: 1px solid #1f1f1f;
-  border-radius: 20px;
+  background: none !important;     /* ❌ remove under layer */
+  border: none !important;         /* ❌ remove frame */
+  border-radius: 0 !important;     /* ❌ no rounding */
   padding: clamp(2rem, 4vw, 3rem) clamp(1.5rem, 3vw, 2rem);
 }
 
 /* =========================
-   PROJECT LIGHT SECTION
+   PROJECT LIGHT — NO BACKGROUND
 ========================= */
 .project-light {
   margin-top: clamp(2rem, 4vw, 2.5rem);
   padding: clamp(1.2rem, 3vw, 1.75rem);
   border-left: 3px solid #facc15;
-  background: rgba(0, 0, 0, 0.35);
-  border-radius: 12px;
+  background: none !important;     /* ❌ remove layer */
+  border-radius: 0 !important;     /* ❌ square */
 }
 
 .project-light-header {
@@ -38,7 +40,6 @@
 }
 
 .project-light h2 {
-  font-family: "Cormorant Garamond", serif;
   font-style: italic;
   font-size: clamp(1.2rem, 3vw, 1.6rem);
   color: #facc15;
@@ -59,7 +60,6 @@
 }
 
 .donation-section h3 {
-  font-family: "Cormorant Garamond", serif;
   font-style: italic;
   font-size: clamp(1.2rem, 3vw, 1.5rem);
   color: #facc15;
@@ -73,14 +73,18 @@
   flex-wrap: wrap;
 }
 
-/* Donate button */
+/* =========================
+   DONATE BUTTON — CLEAN
+========================= */
 .donate-btn {
   background: transparent;
   border: 2px solid #facc15;
   color: #facc15;
-  padding: 0.45rem 1.1rem;
-  border-radius: 999px;
-  font-size: clamp(0.75rem, 2vw, 0.85rem);
+  border-radius: 0 !important;   /* ❌ no pill shape */
+  padding: 0.18rem clamp(0.45rem, 0.9vw, 0.7rem);
+  font-size: clamp(1rem, 2.4vw, 1.3rem);
+  font-weight: 300;
+  letter-spacing: 0.2px;
   cursor: pointer;
   transition: all 0.25s ease-in-out;
 }
@@ -88,6 +92,7 @@
 .donate-btn:hover {
   background: #facc15;
   color: #050505;
+  transform: scale(1.05);
   box-shadow:
     0 0 12px rgba(250, 204, 21, 0.6),
     0 0 25px rgba(250, 204, 21, 0.4);
@@ -161,7 +166,7 @@
 }
 
 /* =========================
-   MOBILE
+   MOBILE — PRIORITY
 ========================= */
 @media (max-width: 600px) {
   .support-container {
@@ -178,37 +183,3 @@
     align-items: center;
   }
 }
-/* =========================
-   SUPPORT PAGE — SLIGHTLY BIGGER DONATE BUTTONS
-========================= */
-
-
-.support-page .donate-btn:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 14px rgba(250, 204, 21, 0.35);
-}
-
-
-/* =========================
-   SUPPORT PAGE — DONATE BUTTON TEXT TUNING
-========================= */
-.support-page .donate-btn {
-  /* ⭐ Smaller button container — reduced further */
-  min-width: clamp(32px, 3.6vw, 44px);
-
-  /* ⭐ Reduced vertical padding so button is shorter — text unchanged */
-  padding: 0.18rem clamp(0.45rem, 0.9vw, 0.7rem);
-
-  /* ⭐ Keep your exact text styling */
-  font-size: clamp(1rem, 2.4vw, 1.3rem);   
-  font-weight: 300;
-  letter-spacing: 0.2px;
-}
-
-
-
-
-
-
-
-

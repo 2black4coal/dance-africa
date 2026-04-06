@@ -88,8 +88,8 @@ export default function Advertise() {
           <h2>Contact & Inquiries</h2>
           <p>For partnerships, advertising, or collaborations:</p>
           <div className="contact-block">
-            <p><strong>Email:</strong> your@email.com</p>
-            <p><strong>Phone:</strong> +1 (000) 000-0000</p>
+            <p><strong>Email:</strong> inquiries@dance-africa.org</p>
+            <p><strong>Phone:</strong> +1 (816) 490-2542</p>
           </div>
           <a
             href="/media/media-kit.pdf"

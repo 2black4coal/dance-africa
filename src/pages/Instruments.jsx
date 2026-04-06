@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-import "../styles/main.css";
+
 import "../styles/instruments.css";
 
 import "../styles/navbar.css";

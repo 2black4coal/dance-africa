@@ -1,4 +1,4 @@
-/* =========================
+/* ========================= 
    PAGE WRAPPER
 ========================= */
 .danceStyles-page {
@@ -53,68 +53,68 @@
 }
 
 /* =========================
-   CARD — SHORTER + CLEAN
+   CARD — FLAT + SQUARE
 ========================= */
 .dance-style-card {
-  background: var(--card-main-bg);
-  border: 1px solid var(--card-main-border);
-  border-radius: 16px;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 0 !important;   /* ✅ square edges */
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  padding: clamp(0.4rem, 1vw, 0.8rem);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  align-items: center;
+  padding: 0;
+  transition: border-color 0.3s ease, transform 0.3s ease;
 }
 
 .dance-style-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-lg);
   border-color: var(--accent);
+  transform: translateY(-3px);
 }
 
 /* =========================
-   IMAGE — DOMINANT + WIDER
+   IMAGE — SQUARE
 ========================= */
 .dance-style-card .image-container {
-  background: var(--image-frame-bg);
-  padding: clamp(0.45rem, 0.9vw, 0.75rem);
-  padding-bottom: 0;
-  border-radius: 16px;
+  padding: 0;
+  border-radius: 0 !important;  /* ✅ ensure no rounding */
+  background: none;
 }
 
 .dance-style-card .image-container img {
   width: 100%;
-  height: clamp(320px, 40vw, 460px);
+  height: clamp(180px, 28vw, 240px);
   object-fit: cover;
-  border-radius: 14px;
+  border-radius: 0 !important;  /* ✅ square image corners */
   display: block;
-  transition: transform 0.45s ease, box-shadow 0.45s ease;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
 /* Hover zoom + gold glow */
-.dance-style-card .image-container:hover img {
-  transform: scale(1.06);
-  box-shadow: 0 8px 22px rgba(250, 204, 21, 0.28);
+.dance-style-card:hover .image-container img {
+  transform: scale(1.04);
+  box-shadow: 0 6px 18px rgba(250, 204, 21, 0.25);
 }
 
 /* =========================
-   CARD BODY — COMPACT
+   CARD BODY — CENTERED + LIGHT
 ========================= */
 .card-body {
-  padding: clamp(0.6rem, 1.2vw, 1rem);
+  text-align: center;
+  padding: 0.6rem 0.4rem;
 }
 
 .card-body h2 {
   font-family: var(--font-serif);
   font-style: italic;
-  font-size: clamp(0.95rem, 2.6vw, 1.15rem);
+  font-size: clamp(1rem, 2.4vw, 1.2rem);
   margin-bottom: 0.25rem;
 }
 
 .card-body .origin {
   font-size: 0.7rem;
   color: var(--text-faint);
-  margin-bottom: 0.45rem;
+  margin-bottom: 0.3rem;
   display: block;
 }
 
@@ -123,10 +123,8 @@
   font-size: 0.8rem;
   line-height: 1.4;
   color: var(--text-muted);
-
-  /* Clamp text */
-  display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  display: -webkit-box;
 }
