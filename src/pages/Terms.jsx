@@ -46,7 +46,7 @@ export default function Terms() {
       <p>
         For any questions regarding these terms, contact:
         <br />
-        terms@dance-africa.org
+        policies@dance-africa.org
       </p>
 
     </div>
