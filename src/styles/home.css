@@ -6,7 +6,7 @@
 .home-page {
   min-height: 100vh;
   width: 100%;
-  background: url("/images/home/homeland.png") center 60% / cover no-repeat;
+  background: url("/images/home/togo.jpg") center 60% / cover no-repeat;
   color: #facc15;
   font-family: 'Dancing Script', 'Allura', cursive;
 
@@ -50,7 +50,7 @@
   margin-top: -0.3rem; /* ⭐ subtle lift */
   font-size: clamp(2rem, 4.5vw, 3.4rem);
   font-weight: 700;
-  color: #000000b5;
+  color: white;
   -webkit-text-stroke: 0.4px rgba(0, 0, 0, 0.45);
   text-shadow: 0 3px 10px rgba(0, 0, 0, 0.45);
   transition: transform 0.45s ease, text-shadow 0.45s ease;

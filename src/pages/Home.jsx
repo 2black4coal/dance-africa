@@ -39,7 +39,7 @@ export default function Home() {
     transition: { duration: 0.5, ease: "easeOut" }
   }}
 >
-  Welcome to Dance Africa
+  Togolese Independence Day Celebration — Love, Unity & National Pride in the USA
 </motion.p>
 
 <motion.p
@@ -56,7 +56,7 @@ export default function Home() {
     transition: { duration: 0.45, ease: "easeOut" }
   }}
 >
-  Discover the rhythm, spirit, and heritage of African dance styles.
+  The Togolese in the USA came together in a vibrant celebration of our National Day — a moment filled with love, cultural pride, awareness, and pure joy. The energy was great, the atmosphere was marvelous, and the unity was unforgettable. A powerful reminder of who we are and how far we’ve come.
 </motion.p>
 
 
