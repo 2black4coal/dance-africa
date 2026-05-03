@@ -36,15 +36,7 @@ export default function Home() {
       <div className="home-center">
         <div className="home-content">
 
-          {/* AFRICA MAP */}
-          <motion.img
-            src="/images/b.png"
-            alt="Africa Map"
-            className="home-map"
-            initial={{ scale: 0.6, opacity: 0 }}
-            animate={{ scale: 1.15, opacity: 1 }}
-            transition={{ duration: 4, ease: [0.16, 1, 0.3, 1] }}
-          />
+       
 
           {/* TITLE */}
           <motion.p
