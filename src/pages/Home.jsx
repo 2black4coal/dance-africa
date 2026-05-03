@@ -4,14 +4,35 @@ import "../styles/home.css";
 
 export default function Home() {
 
-  const slides = [
-    "Celebrating Togo’s Independence with pride, unity, and strength 🇹🇬",
-    "A nation rich in culture, rhythm, and resilience",
-    "From Lomé to the diaspora — one people, one identity",
-    "Honoring heritage through music, dance, and tradition",
-    "A powerful reminder of freedom, unity, and progress",
-    "Togolese spirit shining across the world"
-  ];
+const slides = [
+  "Celebrating Togo’s Independence with pride, unity, and strength 🇹🇬",
+
+  "A nation rich in culture, rhythm, ancestral wisdom, and resilience",
+
+  "From Lomé to the diaspora — one people, one identity, one heartbeat",
+
+  "Honoring the sacrifices of our ancestors who fought for freedom and dignity",
+
+  "Togolese heritage expressed through music, dance, language, and tradition",
+
+  "A powerful reminder that freedom was earned, not given",
+
+  "Unity across generations — from elders to youth, bound by culture",
+
+  "The spirit of independence lives in every Togolese home around the world",
+
+  "Diaspora communities keeping the flame of Togo alive abroad",
+
+  "A celebration of identity, pride, and national consciousness",
+
+  "Togo stands tall in West Africa — small in size, vast in spirit",
+
+  "Freedom is not just history — it is a living responsibility",
+
+  "Our flag carries the story of courage, hope, and survival",
+
+  "Together we rise, together we remember, together we celebrate 🇹🇬"
+];
 
   const [index, setIndex] = useState(0);
   const [show, setShow] = useState(true);
