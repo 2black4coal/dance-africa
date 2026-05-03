@@ -1,23 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@300;400;700&display=swap');
 
 /* =========================
-   PAGE WRAPPER — TRUE HERO CENTERING
+   PAGE WRAPPER
 ========================= */
 .home-page {
   min-height: 100vh;
   width: 100%;
   background: url("/images/home/togo.jpg") center 60% / cover no-repeat;
-  color: #facc15;
-  font-family: 'Dancing Script', 'Allura', cursive;
-
   display: flex;
   justify-content: center;
-  align-items: center; /* ⭐ TRUE vertical centering */
-  padding: 0;          /* ⭐ remove page-section padding */
+  align-items: center;
+  font-family: 'Dancing Script', cursive;
+  color: white;
 }
 
 /* =========================
-   CENTER CONTENT
+   CENTER
 ========================= */
 .home-center {
   display: flex;
@@ -28,98 +26,91 @@
 .home-content {
   text-align: center;
   max-width: 800px;
-  margin: 0 auto;
+  padding: 10px;
 }
 
 /* =========================
-   AFRICA MAP — balanced + elegant
+   MAP
 ========================= */
 .home-map {
-  display: block;
-  margin: 0 auto 1.2rem; /* ⭐ no top margin */
-  max-width: clamp(260px, 48vw, 620px);
-  max-height: clamp(180px, 32vh, 360px); /* ⭐ reduced height */
+  max-width: clamp(260px, 48vw, 600px);
+  max-height: clamp(180px, 32vh, 360px);
   object-fit: contain;
-  transition: transform 0.6s ease;
+  margin-bottom: 1rem;
 }
 
 /* =========================
-   TITLE — lifted + ceremonial
+   BREATHING GLOW ANIMATION
+========================= */
+@keyframes breatheGlow {
+  0% {
+    text-shadow: 0 0 6px rgba(255, 255, 200, 0.25),
+                 0 0 12px rgba(255, 215, 0, 0.15);
+    transform: scale(1);
+  }
+
+  50% {
+    text-shadow: 0 0 18px rgba(255, 255, 200, 0.5),
+                 0 0 30px rgba(255, 215, 0, 0.35);
+    transform: scale(1.01);
+  }
+
+  100% {
+    text-shadow: 0 0 6px rgba(255, 255, 200, 0.25),
+                 0 0 12px rgba(255, 215, 0, 0.15);
+    transform: scale(1);
+  }
+}
+
+/* =========================
+   TITLE (MAIN)
 ========================= */
 .home-title {
-  margin-top: -0.3rem; /* ⭐ subtle lift */
-  font-size: clamp(2rem, 4.5vw, 3.4rem);
+  font-size: clamp(1.7rem, 5vw, 2.6rem);
+  line-height: 1.2;
   font-weight: 700;
-  color: white;
-  -webkit-text-stroke: 0.4px rgba(0, 0, 0, 0.45);
-  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.45);
-  transition: transform 0.45s ease, text-shadow 0.45s ease;
-}
 
-.home-title:hover {
-  text-shadow: 0 3px 12px rgba(0, 0, 0, 0.55);
+  animation: breatheGlow 6s ease-in-out infinite;
 }
 
 /* =========================
-   SUBTITLE — lifted + readable
+   SUBTITLE WRAPPER
+========================= */
+.home-subtitle-wrapper {
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* =========================
+   SUBTITLE
 ========================= */
 .home-subtitle {
-  margin-top: 0.4rem;
-  font-size: clamp(1.1rem, 2.6vw, 1.7rem);
-  color: #fef9c3;
+  font-size: clamp(1.1rem, 3.5vw, 1.6rem);
   max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-  line-height: 1.55;
-  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.45);
-  transition: transform 0.45s ease, text-shadow 0.45s ease;
-}
+  line-height: 1.5;
+  color: #fde68a;
 
-.home-subtitle:hover {
-  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.55);
+  animation: breatheGlow 7s ease-in-out infinite;
 }
 
 /* =========================
-   MOBILE REFINEMENT
+   MOBILE
 ========================= */
 @media (max-width: 600px) {
 
-  /* MAP — slightly smaller so text dominates */
   .home-map {
-    max-width: 68vw;
+    max-width: 70vw;
     max-height: 22vh;
-    margin-bottom: 0.6rem;
   }
 
-  /* TITLE — BIGGER + STRONGER */
   .home-title {
-    margin-top: -0.15rem;
+    font-size: clamp(1.45rem, 5.4vw, 2rem);
 
-    font-size: clamp(2.6rem, 8vw, 3.4rem); /* 🔥 bigger */
-    line-height: 1.05;
-
-    color: #000000cc; /* deeper contrast */
-    -webkit-text-stroke: 0.6px rgba(0, 0, 0, 0.55);
-
-    text-shadow:
-      0 4px 12px rgba(0, 0, 0, 0.55),
-      0 0 6px rgba(0, 0, 0, 0.25); /* glow depth */
   }
 
-  /* SUBTITLE — readable + elegant */
   .home-subtitle {
-    margin-top: 0.5rem;
-
-   font-size: clamp(2rem, 5vw, 2.5rem); /* 🔥 slightly bigger, still cinematic */
-
-    line-height: 1.6;
-
-   color: #fde68a;/* brighter for contrast */
-
-    padding: 0 12px; /* breathing space */
-
-    text-shadow:
-      0 2px 6px rgba(0, 0, 0, 0.55),
-      0 0 4px rgba(0, 0, 0, 0.25);
+    font-size: clamp(1rem, 4.5vw, 1.3rem);
   }
 }
