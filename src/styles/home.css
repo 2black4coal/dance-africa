@@ -1,21 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@300;400;700&display=swap');
 
 /* =========================
-   PAGE WRAPPER
+   PAGE WRAPPER — TRUE HERO CENTERING
 ========================= */
 .home-page {
   min-height: 100vh;
   width: 100%;
-  background: url("/images/home/togo.jpg") center 60% / cover no-repeat;
+  background: url("/images/home/homeland.png") center 60% / cover no-repeat;
+  color: #facc15;
+  font-family: 'Dancing Script', 'Allura', cursive;
+
   display: flex;
   justify-content: center;
-  align-items: center;
-  font-family: 'Dancing Script', cursive;
-  color: white;
+  align-items: center; /* ⭐ TRUE vertical centering */
+  padding: 0;          /* ⭐ remove page-section padding */
 }
 
 /* =========================
-   CENTER
+   CENTER CONTENT
 ========================= */
 .home-center {
   display: flex;
@@ -26,91 +28,68 @@
 .home-content {
   text-align: center;
   max-width: 800px;
-  padding: 10px;
+  margin: 0 auto;
 }
 
 /* =========================
-   MAP
+   AFRICA MAP — balanced + elegant
 ========================= */
 .home-map {
-  max-width: clamp(260px, 48vw, 600px);
-  max-height: clamp(180px, 32vh, 360px);
+  display: block;
+  margin: 0 auto 1.2rem; /* ⭐ no top margin */
+  max-width: clamp(260px, 48vw, 620px);
+  max-height: clamp(180px, 32vh, 360px); /* ⭐ reduced height */
   object-fit: contain;
-  margin-bottom: 1rem;
+  transition: transform 0.6s ease;
 }
 
 /* =========================
-   BREATHING GLOW ANIMATION
-========================= */
-@keyframes breatheGlow {
-  0% {
-    text-shadow: 0 0 6px rgba(255, 255, 200, 0.25),
-                 0 0 12px rgba(255, 215, 0, 0.15);
-    transform: scale(1);
-  }
-
-  50% {
-    text-shadow: 0 0 18px rgba(255, 255, 200, 0.5),
-                 0 0 30px rgba(255, 215, 0, 0.35);
-    transform: scale(1.01);
-  }
-
-  100% {
-    text-shadow: 0 0 6px rgba(255, 255, 200, 0.25),
-                 0 0 12px rgba(255, 215, 0, 0.15);
-    transform: scale(1);
-  }
-}
-
-/* =========================
-   TITLE (MAIN)
+   TITLE — lifted + ceremonial
 ========================= */
 .home-title {
-  font-size: clamp(1.7rem, 5vw, 2.6rem);
-  line-height: 1.2;
+  margin-top: -0.3rem; /* ⭐ subtle lift */
+  font-size: clamp(2rem, 4.5vw, 3.4rem);
   font-weight: 700;
+  color: #000000b5;
+  -webkit-text-stroke: 0.4px rgba(0, 0, 0, 0.45);
+  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.45);
+  transition: transform 0.45s ease, text-shadow 0.45s ease;
+}
 
-  animation: breatheGlow 6s ease-in-out infinite;
+.home-title:hover {
+  text-shadow: 0 3px 12px rgba(0, 0, 0, 0.55);
 }
 
 /* =========================
-   SUBTITLE WRAPPER
-========================= */
-.home-subtitle-wrapper {
-  height: 90px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* =========================
-   SUBTITLE
+   SUBTITLE — lifted + readable
 ========================= */
 .home-subtitle {
-  font-size: clamp(1.1rem, 3.5vw, 1.6rem);
+  margin-top: 0.4rem;
+  font-size: clamp(1.1rem, 2.6vw, 1.7rem);
+  color: #fef9c3;
   max-width: 600px;
-  line-height: 1.5;
-  color: #fde68a;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.55;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.45);
+  transition: transform 0.45s ease, text-shadow 0.45s ease;
+}
 
-  animation: breatheGlow 7s ease-in-out infinite;
+.home-subtitle:hover {
+  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.55);
 }
 
 /* =========================
-   MOBILE
+   MOBILE REFINEMENT
 ========================= */
 @media (max-width: 600px) {
-
   .home-map {
     max-width: 70vw;
-    max-height: 22vh;
+    max-height: 24vh;
+    margin-bottom: 0.8rem;
   }
 
   .home-title {
-    font-size: clamp(1.45rem, 5.4vw, 2rem);
-
-  }
-
-  .home-subtitle {
-    font-size: clamp(1.25rem, 4.6vw, 1.7rem);
+    margin-top: -0.2rem;
   }
 }
