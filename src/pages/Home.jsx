@@ -1,91 +1,64 @@
-import { motion, AnimatePresence } from "framer-motion";
-import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 import "../styles/home.css";
 
 export default function Home() {
-
-const slides = [
-  "Celebrating Togo’s Independence with pride, unity, and strength 🇹🇬",
-
-  "A nation rich in culture, rhythm, ancestral wisdom, and resilience",
-
-  "From Lomé to the diaspora — one people, one identity, one heartbeat",
-
-  "Honoring the sacrifices of our ancestors who fought for freedom and dignity",
-
-  "Togolese heritage expressed through music, dance, language, and tradition",
-
-  "A powerful reminder that freedom was earned, not given",
-
-  "Unity across generations — from elders to youth, bound by culture",
-
-  "The spirit of independence lives in every Togolese home around the world",
-
-  "Diaspora communities keeping the flame of Togo alive abroad",
-
-  "A celebration of identity, pride, and national consciousness",
-
-  "Togo stands tall in West Africa — small in size, vast in spirit",
-
-  "Freedom is not just history — it is a living responsibility",
-
-  "Our flag carries the story of courage, hope, and survival",
-
-  "Together we rise, together we remember, together we celebrate 🇹🇬"
-];
-
-  const [index, setIndex] = useState(0);
-  const [show, setShow] = useState(true);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setShow(false);
-
-      setTimeout(() => {
-        setIndex((i) => (i + 1) % slides.length);
-        setShow(true);
-      }, 1200);
-
-    }, 5200);
-
-    return () => clearInterval(interval);
-  }, []);
-
   return (
-    <section className="home-page">
+    <section className="home-page page-section">
 
       <div className="home-center">
         <div className="home-content">
 
-       
+          {/* Africa Map – smooth zoom-in */}
+          <motion.img
+            src="/images/b.png"
+            alt="Africa Map"
+            className="home-map"
+            initial={{ scale: 0.6, opacity: 0 }}
+            animate={{ scale: 1.15, opacity: 1 }}
+            transition={{
+              duration: 4,
+              ease: [0.16, 1, 0.3, 1],
+            }}
+            whileHover={{
+              scale: 1.22,
+              transition: { duration: 0.6, ease: "easeOut" }
+            }}
+          />
 
           {/* TITLE */}
           <motion.p
-            className="home-title"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 2 }}
-          >
-            Togolese Independence Day Celebration — Love, Unity & National Pride in the USA
-          </motion.p>
+  className="home-title"
+  initial={{ opacity: 0, y: 40, scale: 0.94 }}
+  animate={{ opacity: 1, y: 0, scale: 1 }}
+  transition={{
+    duration: 2.2,          // slower
+    ease: [0.16, 1, 0.3, 1]
+  }}
+  whileHover={{
+    scale: 1.04,
+    transition: { duration: 0.5, ease: "easeOut" }
+  }}
+>
+  Welcome to Dance Africa
+</motion.p>
 
-          {/* SUBTITLE SLIDER */}
-          <div className="home-subtitle-wrapper">
-            <AnimatePresence mode="wait">
-              {show && (
-                <motion.p
-                  key={index}
-                  className="home-subtitle"
-                  initial={{ opacity: 0, y: 25 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -25 }}
-                  transition={{ duration: 1.2 }}
-                >
-                  {slides[index]}
-                </motion.p>
-              )}
-            </AnimatePresence>
-          </div>
+<motion.p
+  className="home-subtitle"
+  initial={{ opacity: 0, y: 28, scale: 0.95 }}
+  animate={{ opacity: 1, y: 0, scale: 1 }}
+  transition={{
+    duration: 1.8,          // slower
+    delay: 0.35,
+    ease: [0.16, 1, 0.3, 1]
+  }}
+  whileHover={{
+    scale: 1.03,
+    transition: { duration: 0.45, ease: "easeOut" }
+  }}
+>
+  Discover the rhythm, spirit, and heritage of African dance styles.
+</motion.p>
+
 
         </div>
       </div>
